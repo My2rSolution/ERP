@@ -1,0 +1,134 @@
+﻿@model _2RERP.Domain.Common.Countries
+
+@{
+    ViewBag.Title = "Country";
+    Layout = "~/Views/Shared/_2RCommonMaster.cshtml";
+}
+<link rel="stylesheet" href="~/css/typographics.css">
+
+@* <script src="~/Scripts/jquery-1.8.2.min.js"></script>*@
+    <script src="~/Scripts/angular.js"></script>
+<script src="../Scripts/app.js"></script>
+<div  ng-app="myApp">
+    <div ng-controller="BasicData">
+        <h1 class="grid_12">All Country Data </h1>
+        <form id="frm1" class="grid_12 no-box">
+            <fieldset>
+                <legend>Country List</legend>
+                <div class="content">
+                    <div class="row">
+                        <label for="f1_normal_input">
+                            <strong>country_id </strong>
+                        </label>
+                        <div style="margin-left: 196px;">
+                            <input type="text" ng-model="Country.country_id" id="Customerid"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="f1_normal_input">
+                            <strong>country_code </strong>
+                        </label>
+                        <div style="margin-left: 196px;">
+                            @*<input type="text" ng-model="Country.country_id" type="text"/>*@
+                            <input id="CustomerCode" ng-model="Country.country_code" type="text"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="f1_normal_input">
+                            <strong>country_name </strong>
+                        </label>
+                        <div style="margin-left: 196px;">
+                            @*<input type="text" ng-model="Country.country_id" type="text"/>*@
+                            @*<input id="CustomerCode" ng-model="Country.country_code" type="text"/>*@
+                            <input id="CustomerName" ng-model="Country.country_name" type="text"/>
+                        </div>
+                    </div>
+                    @* <div class="row">
+                     <i>country_id :-</i> <input id="Customeri" ng-model="Country.country_id" type="text"/><br/>*@
+                    @*<i>country_code :-</i> <input id="CustomerCod" ng-model="Country.country_code" type="text"/><br/>*@
+                    @*<i>country_name :-</i> <input id="CustomerNam" ng-model="Country.country_name" type="text"/><br/>*@
+                    @*<i>audit_user_id :-</i> <input id="audit_user_id" ng-model="Country.audit_user_id" type="text"/><br/>*@
+                    @*<i>audit_ts :-</i> <input id="audit_ts" ng-model="Country.audit_ts" type="text"/><br/>
+                </div>*@
+                </div>
+                 <div class="actions">
+						<div class="left">
+						    @*<input type="reset" value="Cancel"/>*@
+                             <input id="Submit2" type="button" value="load" ng-click="get()"/>
+						</div>
+						<div class="right">
+						    @*<input type="submit" value="Submit" name=submit/>*@
+                             <input id="Submit1" type="button" value="Add" ng-click="Insert()"/>
+						</div>
+					</div><!-- End of .actions -->
+            </fieldset>
+           
+
+
+        </form>
+       
+       
+       
+        <div class="grid_12">
+            <div class="box">
+                <div class="header">
+                    <h2>Country Lsit</h2>
+                </div>
+                <div class="content">
+                    <table id="tbl" class="dynamic styled" data-filter-Bar="always" data-table-tools='{"display":false}'>
+                        <tr>
+                            <td class="center">Country Id</td>
+                            <td class="center">Country Code</td>
+                            <td class="center">Country Name</td>
+                        </tr>
+
+                        <tr ng-repeat="c in Countries">
+                            <td class="center">{{c.country_id}}</td>
+                            <td class="center">{{c.country_code}}</td>
+                            <td class="center">{{c.country_name}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Country</title>
+   
+</head>
+<body  ng-app="myApp">
+<div ng-controller="BasicData">
+    <form id="frm1">
+        <i>country_id :-</i> <input id="Customerid" ng-model="Country.country_id" type="text"/><br/>
+        <i>country_code :-</i> <input id="CustomerCode" ng-model="Country.country_code" type="text"/><br/>
+        <i>country_name :-</i> <input id="CustomerName" ng-model="Country.country_name" type="text"/><br/>
+        <i>audit_user_id :-</i> <input id="audit_user_id" ng-model="Country.audit_user_id" type="text"/><br/>
+        <i>audit_ts :-</i> <input id="audit_ts" ng-model="Country.audit_ts" type="text"/><br/>
+
+    </form>
+    <input id="Submit1" type="button" value="Add" ng-click="Insert()"/>
+    <input id="Submit2" type="button" value="load" ng-click="get()"/>
+
+
+    <table id="tbl">
+        <tr>
+            <td>Country Id</td>
+            <td>Country Code</td>
+            <td>Country Name</td>
+        </tr>
+     
+            <tr ng-repeat="c in Countries">
+                <td>{{c.country_id}}</td>
+                <td>{{c.country_code}}</td>
+                 <td>{{c.country_name}}</td>
+            </tr>
+        </table>
+</div>
+</body>
+</html>*@
+
