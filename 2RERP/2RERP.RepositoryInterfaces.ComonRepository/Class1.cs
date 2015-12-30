@@ -8,5 +8,6 @@ namespace _2RERP.RepositoryInterfaces.ComonRepository
 {
     public class Class1
     {
+        //Changed.....
     }
 }
