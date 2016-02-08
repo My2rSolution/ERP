@@ -101,18 +101,5 @@ namespace _2RERP.WebUI.Controllers.Settings_UI_Controller.Policy_UI_Controller
                 return View();
             }
         }
-
-        public ActionResult PermissionView()
-        {
-            try
-            {
-                return View();
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
-        }
     }
 }

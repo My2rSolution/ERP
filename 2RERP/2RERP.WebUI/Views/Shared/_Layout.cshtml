@@ -44,468 +44,492 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 <head>
-     
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- iPhone: Don't render numbers as call links -->
     <meta name="format-detection" content="telephone=no">
 
 
-    <link rel="dns-prefetch" href="http://fonts.googleapis.com"/>
-    <link rel="dns-prefetch" href="http://themes.googleusercontent.com"/>
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="http://themes.googleusercontent.com" />
 
-    <link rel="dns-prefetch" href="http://ajax.googleapis.com"/>
-    <link rel="dns-prefetch" href="http://cdnjs.cloudflare.com"/>
-    <link rel="dns-prefetch" href="http://agorbatchev.typepad.com"/>
+    <link rel="dns-prefetch" href="http://ajax.googleapis.com" />
+    <link rel="dns-prefetch" href="http://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="http://agorbatchev.typepad.com" />
 
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
     <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
     <title>@ViewBag.Title</title>
 
     <!-- Layout Styles -->
- <!-- The Styles -->
-	<!-- ---------- -->
-	
-	<!-- Layout Styles -->
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/grid.css">
-	<link rel="stylesheet" href="../css/layout.css">
-	
-	<!-- Icon Styles -->
-	<link rel="stylesheet" href="../css/icons.css">
-	<link rel="stylesheet" href="../css/fonts/font-awesome.css">
-	<!--[if IE 8]><link rel="stylesheet" href="../css/fonts/font-awesome-ie7.css"><![endif]-->
-	
-	<!-- External Styles -->
-	<link rel="stylesheet" href="../css/external/jquery-ui-1.8.21.custom.css">
-	<link rel="stylesheet" href="../css/external/jquery.chosen.css">
-	<link rel="stylesheet" href="../css/external/jquery.cleditor.css">
-	<link rel="stylesheet" href="../css/external/jquery.colorpicker.css">
-	<link rel="stylesheet" href="../css/external/jquery.elfinder.css">
-	<link rel="stylesheet" href="../css/external/jquery.fancybox.css">
-	<link rel="stylesheet" href="../css/external/jquery.jgrowl.css">
-	<link rel="stylesheet" href="../css/external/jquery.plupload.queue.css">
-	<link rel="stylesheet" href="../css/external/syntaxhighlighter/shCore.css" />
-	<link rel="stylesheet" href="../css/external/syntaxhighlighter/shThemeDefault.css" />
-	
-	<!-- Elements -->
-	<link rel="stylesheet" href="../css/elements.css">
-	<link rel="stylesheet" href="../css/forms.css">
-	
-	<!-- OPTIONAL: Print Stylesheet for Invoice -->
-	<link rel="stylesheet" href="../css/print-invoice.css">
-	
-	<!-- Typographics -->
-	<link rel="stylesheet" href="../css/typographics.css">
-	
-	<!-- Responsive Design -->
-	<link rel="stylesheet" href="../css/media-queries.css">
-	
-	<!-- Bad IE Styles -->
-	<link rel="stylesheet" href="../css/ie-fixes.css">
-	
-	
-	
-	  @Scripts.Render("~/bundles/jquery")
-  
+    <!-- The Styles -->
+    <!-- ---------- -->
 
-	  @Scripts.Render("~/bundles/modernizr")
-   
-	
-	<!-- The Scripts -->
-	<!-- ----------- -->
-	
-	
-	<!-- JavaScript at the top (will be cached by browser) -->
-	
-	<!-- Load Webfont loader -->
-	<script type="text/javascript">
-	    window.WebFontConfig = {
-	        google: { families: ['PT Sans:400,700'] },
-	        active: function () { $(window).trigger('fontsloaded') }
-	    };
-	</script>
-	<script defer async src="https://ajax.googleapis.com/ajax/libs/webfont/1.0.28/webfont.js"></script>
-	
-	<!-- Essential polyfills -->
-	@*<script src="../js/mylibs/polyfills/modernizr-2.6.1.min.js"></script>*@
-@*	<script src="../js/mylibs/polyfills/respond.js"></script>
+    <!-- Layout Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/layout.css">
+
+    <!-- Icon Styles -->
+    <link rel="stylesheet" href="../css/icons.css">
+    <link rel="stylesheet" href="../css/fonts/font-awesome.css">
+    <!--[if IE 8]><link rel="stylesheet" href="../css/fonts/font-awesome-ie7.css"><![endif]-->
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="../css/external/jquery-ui-1.8.21.custom.css">
+    <link rel="stylesheet" href="../css/external/jquery.chosen.css">
+    <link rel="stylesheet" href="../css/external/jquery.cleditor.css">
+    <link rel="stylesheet" href="../css/external/jquery.colorpicker.css">
+    <link rel="stylesheet" href="../css/external/jquery.elfinder.css">
+    <link rel="stylesheet" href="../css/external/jquery.fancybox.css">
+    <link rel="stylesheet" href="../css/external/jquery.jgrowl.css">
+    <link rel="stylesheet" href="../css/external/jquery.plupload.queue.css">
+    <link rel="stylesheet" href="../css/external/syntaxhighlighter/shCore.css" />
+    <link rel="stylesheet" href="../css/external/syntaxhighlighter/shThemeDefault.css" />
+
+    <!-- Elements -->
+    <link rel="stylesheet" href="../css/elements.css">
+    <link rel="stylesheet" href="../css/forms.css">
+
+    <!-- OPTIONAL: Print Stylesheet for Invoice -->
+    <link rel="stylesheet" href="../css/print-invoice.css">
+
+    <!-- Typographics -->
+    <link rel="stylesheet" href="../css/typographics.css">
+
+    <!-- Responsive Design -->
+    <link rel="stylesheet" href="../css/media-queries.css">
+
+    <!-- Bad IE Styles -->
+    <link rel="stylesheet" href="../css/ie-fixes.css">
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+
+
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    <!-- The Scripts -->
+    <!-- ----------- -->
+
+
+    <!-- JavaScript at the top (will be cached by browser) -->
+
+    <!-- Load Webfont loader -->
+    <script type="text/javascript">
+        window.WebFontConfig = {
+            google: { families: ['PT Sans:400,700'] },
+            active: function () { $(window).trigger('fontsloaded') }
+        };
+    </script>
+    <script defer async src="https://ajax.googleapis.com/ajax/libs/webfont/1.0.28/webfont.js"></script>
+
+    <!-- Essential polyfills -->
+    @*<script src="../js/mylibs/polyfills/modernizr-2.6.1.min.js"></script>*@
+    @*	<script src="../js/mylibs/polyfills/respond.js"></script>
 	<script src="../js/mylibs/polyfills/matchmedia.js"></script>*@
-	<!--[if lt IE 9]><script src="../js/mylibs/polyfills/selectivizr.js"></script><![endif]-->
-	<!--[if lt IE 10]><script src="../js/mylibs/polyfills/excanvas.js"></script><![endif]-->
-	<!--[if lt IE 10]><script src="../js/mylibs/polyfills/classlist.js"></script><![endif]-->
-	
-	
-	
-	<!-- Grab frameworks from CDNs -->
-		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-	@*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <!--[if lt IE 9]><script src="../js/mylibs/polyfills/selectivizr.js"></script><![endif]-->
+    <!--[if lt IE 10]><script src="../js/mylibs/polyfills/excanvas.js"></script><![endif]-->
+    <!--[if lt IE 10]><script src="../js/mylibs/polyfills/classlist.js"></script><![endif]-->
+
+
+
+    <!-- Grab frameworks from CDNs -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
 	<script>window.jQuery || document.write('<script src="../js/libs/jquery-1.7.2.js"><\/script>')</script>
 	
 		<!-- Do the same with jQuery UI -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.js"></script>
 	<script>window.jQuery.ui || document.write('<script src="../js/libs/jquery-ui-1.8.21.js"><\/script>')</script>*@
-	
-		<!-- Do the same with Lo-Dash.js -->
-	<!--[if gt IE 8]><!-->
-	@*<script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.../js/0.4.2/lodash.js"></script>
+
+    <!-- Do the same with Lo-Dash.js -->
+    <!--[if gt IE 8]><!-->
+    @*<script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.../js/0.4.2/lodash.js"></script>
     <script>window._ || document.write('<script src="../js/libs/lo-dash.js"><\/script>')</script>*@
     <script src="../js/libs/lo-dash.js"></script>
-	<!--<![endif]-->
-	<!-- IE8 doesn't like lodash -->
-	<!--[if lt IE 9]><script src="http://documentcloud.github.com/underscore/underscore.js"></script><![endif]-->
-	
-	
-	
-	<!-- scripts concatenated and minified via build script -->
-	
-	<!-- General Scripts -->
-	@*<script src="../js/mylibs/jquery.hashchange.js"></script>
+    <!--<![endif]-->
+    <!-- IE8 doesn't like lodash -->
+    <!--[if lt IE 9]><script src="http://documentcloud.github.com/underscore/underscore.js"></script><![endif]-->
+
+
+
+    <!-- scripts concatenated and minified via build script -->
+
+    <!-- General Scripts -->
+    @*<script src="../js/mylibs/jquery.hashchange.js"></script>
 	<script src="../js/mylibs/jquery.idle-timer.js"></script>
 	<script src="../js/mylibs/jquery.plusplus.js"></script>
 	<script src="../js/mylibs/jquery.jgrowl.js"></script>
 	<script src="../js/mylibs/jquery.scrollTo.js"></script>
 	<script src="../js/mylibs/jquery.ui.touch-punch.js"></script>
 	<script src="../js/mylibs/jquery.ui.multiaccordion.js"></script>*@
-	<script src="../js/mylibs/number-functions.js"></script>
-	
-	<!-- Forms -->
-	<script src="../js/mylibs/forms/jquery.autosize.js"></script>
-	@*<script src="../js/mylibs/forms/jquery.checkbox.js"></script>*@
-	@*<script src="../js/mylibs/forms/jquery.chosen.js"></script>*@
-	@*<script src="../js/mylibs/forms/jquery.cleditor.js"></script>
+    <script src="../js/mylibs/number-functions.js"></script>
+
+    <!-- Forms -->
+    <script src="../js/mylibs/forms/jquery.autosize.js"></script>
+    @*<script src="../js/mylibs/forms/jquery.checkbox.js"></script>*@
+    @*<script src="../js/mylibs/forms/jquery.chosen.js"></script>*@
+    @*<script src="../js/mylibs/forms/jquery.cleditor.js"></script>
 	<script src="../js/mylibs/forms/jquery.colorpicker.js"></script>
 	<script src="../js/mylibs/forms/jquery.ellipsis.js"></script>*@
-	<script src="../js/mylibs/forms/jquery.fileinput.js"></script>
-@*	<script src="../js/mylibs/forms/jquery.fullcalendar.js"></script>*@
-	<script src="../js/mylibs/forms/jquery.maskedinput.js"></script>
-@*	<script src="../js/mylibs/forms/jquery.mousewheel.js"></script>
+    <script src="../js/mylibs/forms/jquery.fileinput.js"></script>
+    @*	<script src="../js/mylibs/forms/jquery.fullcalendar.js"></script>*@
+    <script src="../js/mylibs/forms/jquery.maskedinput.js"></script>
+    @*	<script src="../js/mylibs/forms/jquery.mousewheel.js"></script>
 	<script src="../js/mylibs/forms/jquery.placeholder.js"></script>
 	<script src="../js/mylibs/forms/jquery.pwdmeter.js"></script>
 	<script src="../js/mylibs/forms/jquery.ui.datetimepicker.js"></script>
 	<script src="../js/mylibs/forms/jquery.ui.spinner.js"></script>*@
-	<script src="../js/mylibs/forms/jquery.validate.js"></script>
-	@*<script src="../js/mylibs/forms/uploader/plupload.js"></script>
+    <script src="../js/mylibs/forms/jquery.validate.js"></script>
+    @*<script src="../js/mylibs/forms/uploader/plupload.js"></script>
 	<script src="../js/mylibs/forms/uploader/plupload.html5.js"></script>
 	<script src="../js/mylibs/forms/uploader/plupload.html4.js"></script>
 	<script src="../js/mylibs/forms/uploader/plupload.flash.js"></script>
 	<script src="../js/mylibs/forms/uploader/jquery.plupload.queue/jquery.plupload.queue.js"></script>*@
-		
-	<!-- Charts -->
-	@*<script src="../js/mylibs/charts/jquery.flot.js"></script>
+
+    <!-- Charts -->
+    @*<script src="../js/mylibs/charts/jquery.flot.js"></script>
 	<script src="../js/mylibs/charts/jquery.flot.orderBars.js"></script>
 	<script src="../js/mylibs/charts/jquery.flot.pie.js"></script>
 	<script src="../js/mylibs/charts/jquery.flot.resize.js"></script>*@
-	
-	<!-- Explorer -->
-	@*<script src="../js/mylibs/explorer/jquery.elfinder.js"></script>*@
-	
-	<!-- Fullstats -->
-	@*<script src="../js/mylibs/fullstats/jquery.css-transform.js"></script>
+
+    <!-- Explorer -->
+    @*<script src="../js/mylibs/explorer/jquery.elfinder.js"></script>*@
+
+    <!-- Fullstats -->
+    @*<script src="../js/mylibs/fullstats/jquery.css-transform.js"></script>
 	<script src="../js/mylibs/fullstats/jquery.animate-css-rotate-scale.js"></script>
 	<script src="../js/mylibs/fullstats/jquery.sparkline.js"></script>*@
-	
-	<!-- Syntax Highlighter -->
-	@*<script src="../js/mylibs/syntaxhighlighter/shCore.js"></script>*@
-	<script src="../js/mylibs/syntaxhighlighter/shAutoloader.js"></script>
-	
-	@*<!-- Dynamic Tables -->
+
+    <!-- Syntax Highlighter -->
+    @*<script src="../js/mylibs/syntaxhighlighter/shCore.js"></script>*@
+    <script src="../js/mylibs/syntaxhighlighter/shAutoloader.js"></script>
+
+    @*<!-- Dynamic Tables -->
 	<script src="../js/mylibs/dynamic-tables/jquery.dataTables.js"></script>
 	<script src="../js/mylibs/dynamic-tables/jquery.dataTables.tableTools.zeroClipboard.js"></script>
 	<script src="../js/mylibs/dynamic-tables/jquery.dataTables.tableTools.js"></script>*@
-	
-	<!-- Gallery -->
-	@*<script src="../js/mylibs/gallery/jquery.fancybox.js"></script>*@
-	
-	<!-- Tooltips -->
-	@*<script src="../js/mylibs/tooltips/jquery.tipsy.js"></script>*@
-	
-	<!-- Do not touch! -->
-	<script src="../js/mango.js"></script>
-	<script src="../js/plugins.js"></script>
-	<script src="../js/script.js"></script>
-	
-	<!-- Your custom JS goes here -->
-	@*<script src="../js/app.js"></script>*@
-	
-	<!-- end scripts -->
-    <style type="text/css">
-        .gridStyle  
-        {  
-            border: 5px solid #d4d4d4;  
-            width: 400px;  
-            height: 388px;  
-        }   
-        .ngViewport {
 
+    <!-- Gallery -->
+    @*<script src="../js/mylibs/gallery/jquery.fancybox.js"></script>*@
+
+    <!-- Tooltips -->
+    @*<script src="../js/mylibs/tooltips/jquery.tipsy.js"></script>*@
+    
+    <!-- Do not touch! -->
+    <script src="../js/mango.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/script.js"></script>
+
+    <!-- Your custom JS goes here -->
+    @*<script src="../js/app.js"></script>*@
+
+    <!-- end scripts -->
+    <style type="text/css">
+        .gridStyle {
+            border: 5px solid #d4d4d4;
+            width: 400px;
+            height: 388px;
+        }
+
+        .ngViewport {
             height: 301px !important;
         }
     </style>
 </head>
-<body >
-<!----------------------->
-   
-	<!-- Some dialogs etc. -->
+<body>
+    <!----------------------->
 
-<!-- The loading box -->
-    
-	<div id="loading-overlay"></div>
-	<div id="loading">
-		<span>Loading...</span>
-	</div>
-<!-- End of loading box -->
+    <!-- Some dialogs etc. -->
+
+    <!-- The loading box -->
+
+    <div id="loading-overlay"></div>
+    <div id="loading">
+        <span>Loading...</span>
+    </div>
+    <!-- End of loading box -->
     <!-- The settings dialog -->
-	<div id="settings" class="settings-content" data-width=450>
-	
-		<ul class="tabs center-elements">
-			<li><a href="#settings-1"><img src="../img/icons/packs/fugue/24x24/user-business.png" alt="" /><span>Account Settings</span></a></li>
-			<li><a href="#settings-2"><img src="../img/icons/packs/fugue/24x24/balloon.png" alt="" /><span>Notifications</span></a></li>
-			<li><a href="#settings-3"><img src="../img/icons/packs/fugue/24x24/credit-card.png" alt="" /><span>Invoicing</span></a></li>
-		</ul>
-		
-		<div class="change_password">
-			<form action="#" method="GET" class="validate" id="settings_password">
-				<p>
-					<label for="settings-password">New Password:</label> <input type="password" id="settings-password" class="required strongpw small password meter" />
-				</p>
-			</form>
-			<div class="actions">
-				<div class="right">
-					<input form="settings_password" type="reset" value="Cancel" class="grey" />
-					<input form="settings_password" type="submit" value="OK" />
-				</div>
-			</div>
-		</div><!-- End of .change_password -->
-		
-		<div class="content">
-		
-			<div id="settings-1">
-				<form action="#" method="GET">
-					<p>
-						<label for="settings-name">Name:</label> <input type="text" id="settings-name" class="medium" />
-					</p>
-					<p>
-						<label for="settings-descr">Descripton:</label> <input type="text" id="settings-descr" class="medium" />
-					</p>
-					<p class="divider"></p>
-					<p>
-						<label for="settings-pw">Password: </label> <input class="grey change_password_button" type="button" id="settings-pw" value="Change Password..." data-lang-changed="Password changed" />
-					</p>
-				</form>
-			</div><!-- End of #settings-1 -->
-			
-			<div id="settings-2">
-				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-				<form action="#" method="GET">
-					<div class="spacer"></div>
-					<p class="divider"></p>
-					<div class="spacer"></div>
-					<p>
-						<label for="settings-email">Email Address:</label> <input type="text" id="settings-email" class="medium" />
-					</p>
-					<p>
-						<label for="settings-interval">Interval: </label>
-						<select name="settings-interval" id="settings-interval" data-placeholder="Choose an Interval">
-							<option value=""></option>
-							<option value="Never">Never</option>
-							<option value="Daily">Daily</option>
-							<option value="Weekly">Weekly</option>
-							<option value="Monthly">Monthly</option>
-							<option value="Yearly">Yearly</option>
-						</select>
-					</p>
-				</form>
-			</div><!-- End of #settings-2 -->
-			
-			<div id="settings-3">
-				<form action="#" method="GET">
-					<p>
-						<label for="settings-card-number">Card number:</label> <input type="text" id="settings-card-number" class="medium" />
-					</p>
-					<p>
-						<label for="settings-cvv">CVV:</label> <input type="text" id="settings-cvv" class="medium" />
-					</p>
-					<p>
-						<label for="settings-expiration">Expiration: </label>
-						<select sname="settings-expiration" id="settings-expiration" data-placeholder="Choose an Expiration">
-							<option value=""></option>
-							<option value="2012">2012</option>
-							<option value="2013">2013</option>
-							<option value="2014">2014</option>
-							<option value="2015">2015</option>
-						</select>
-					</p>
-				</form>
-			</div><!-- End of #settings-3 -->
-			
-		</div><!-- End of .content -->
-		
-		<div class="actions">
-			<div class="left">
-				<button class="grey cancel">Cancel</button>
-			</div>
-			<div class="right">
-				<button class="save">Save</button>
-				<button class="hide saving" disabled >Saving...</button>
-			</div>
-		</div><!-- End of .actions -->
-		
-	</div><!-- End of settings dialog -->
-	
-	<!-- Add Client Example Dialog -->
-	<div style="display: none;" id="dialog_add_client" title="Add Client Example Dialog">
-		<form action="" class="full validate">
-			<div class="row">
-				<label for="d2_username">
-					<strong>Username</strong>
-				</label>
-				<div>
-					<input class="required" type=text name=d2_username id=d2_username />
-				</div>
-			</div>
-			<div class="row">
-				<label for="d2_email">
-					<strong>Email Address</strong>
-				</label>
-				<div>
-					<input class="required" type=text name=d2_email id=d2_email />
-				</div>
-			</div>
-			<div class="row">
-				<label for="d2_role">
-					<strong>Role</strong>
-				</label>
-				<div>
-					<select style="padding-bottom: 10px" name=d2_role id=d2_role class="search required" data-placeholder="Choose a Role">
-						<option value=""></option>
-						<option value="Applicant">Applicant</option> 
-						<option value="Member">Member</option> 
-						<option value="Moderator">Moderator</option> 
-						<option value="Administrator">Administrator</option> 
-					</select>
-				</div>
-			</div>
-		</form>
-		<div class="actions">
-			<div class="left">
-				<button class="grey cancel">Cancel</button>
-			</div>
-			<div class="right">
-				<button class="submit">Add User</button>
-			</div>
-		</div>
-	</div><!-- End if #dialog_add_client -->
-	
-	<script type="text/javascript">
-	    $$.ready(function () {
-	        $("#dialog_add_client").dialog({
-	            autoOpen: false,
-	            modal: true,
-	            width: 400,
-	            open: function () { $(this).parent().css('overflow', 'visible'); $$.utils.forms.resize() }
-	        }).find('button.submit').click(function () {
-	            var $el = $(this).parents('.ui-dialog-content');
-	            if ($el.validate().form()) {
-	                $el.find('form')[0].reset();
-	                $el.dialog('close');
-	            }
-	        }).end().find('button.cancel').click(function () {
-	            var $el = $(this).parents('.ui-dialog-content');
-	            $el.find('form')[0].reset();
-	            $el.dialog('close');;
-	        });
+    <div id="settings" class="settings-content" data-width="450">
 
-	        $(".open-add-client-dialog").click(function () {
-	            $("#dialog_add_client").dialog("open");
-	            return false;
-	        });
-	    });
-	</script>
-	<!--  End of Add Client Example Dialog -->
-	
-	<!-- Message Dialog -->
-	<div style="display: none;" id="dialog_message" title="Conversation: John Doe">
-		<div class="spacer"></div>
-		<div class="messages full chat">
-			
-			<div class="msg reply">
-				<img src="../img/icons/packs/iconsweets2/25x25/user-2.png"/>
-				<div class="content">
-					<h3><a href="pages_profile.html">John Doe</a> <span>says:</span><small>3 hours ago</small></h3>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-					et dolore magna aliquyam erat, sed diam voluptua.</p>
-				</div>
-			</div>
-			
-			<div class="msg">
-				<img src="../img/icons/packs/iconsweets2/25x25/user-2.png"/>
-				<div class="content">
-					<h3><a href="pages_profile.html">Peter Doe</a> <span>says:</span><small>5 hours ago</small></h3>
-					<p>At vero eos et accusam et justo duo dolores et ea rebum.
-					Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-				</div>
-			</div>
-		
-		</div><!-- End of .messages -->
-		
-		<div class="actions">
-			<div class="left">
-				<input style="width: 330px;" type="text" name=d3_message id=d3_message placeholder="Type your message..."/>
-			</div>
-			<div class="right">
-				<button>Send</button>
-				<button class="grey">Cancel</button>
-			</div>
-		</div><!-- End of .actions -->
-		
-	</div><!-- End of #dialog_message -->
-	
-	<script type="text/javascript">
-	   $$.ready(function () {
-	        $("#dialog_message").dialog({
-	            autoOpen: false,
-	            width: 500,
-	            modal: true
-	        }).find('button').click(function () {
-	            $(this).parents('.ui-dialog-content').dialog('close');
-	        });
+        <ul class="tabs center-elements">
+            <li><a href="#settings-1">
+                <img src="../img/icons/packs/fugue/24x24/user-business.png" alt="" /><span>Account Settings</span></a></li>
+            <li><a href="#settings-2">
+                <img src="../img/icons/packs/fugue/24x24/balloon.png" alt="" /><span>Notifications</span></a></li>
+            <li><a href="#settings-3">
+                <img src="../img/icons/packs/fugue/24x24/credit-card.png" alt="" /><span>Invoicing</span></a></li>
+        </ul>
 
-	        $(".open-message-dialog").click(function () {
-	            $("#dialog_message").dialog("open");
-	            return false;
-	        });
-	    });
-	</script>
-	<!-- End of Message Dialog -->
-	
-	<!--------------------------------->
-	<!-- Now, the page itself begins -->
-<!--------------------------------->
+        <div class="change_password">
+            <form action="#" method="GET" class="validate" id="settings_password">
+                <p>
+                    <label for="settings-password">New Password:</label>
+                    <input type="password" id="settings-password" class="required strongpw small password meter" />
+                </p>
+            </form>
+            <div class="actions">
+                <div class="right">
+                    <input form="settings_password" type="reset" value="Cancel" class="grey" />
+                    <input form="settings_password" type="submit" value="OK" />
+                </div>
+            </div>
+        </div>
+        <!-- End of .change_password -->
+
+        <div class="content">
+
+            <div id="settings-1">
+                <form action="#" method="GET">
+                    <p>
+                        <label for="settings-name">Name:</label>
+                        <input type="text" id="settings-name" class="medium" />
+                    </p>
+                    <p>
+                        <label for="settings-descr">Descripton:</label>
+                        <input type="text" id="settings-descr" class="medium" />
+                    </p>
+                    <p class="divider"></p>
+                    <p>
+                        <label for="settings-pw">Password: </label>
+                        <input class="grey change_password_button" type="button" id="settings-pw" value="Change Password..." data-lang-changed="Password changed" />
+                    </p>
+                </form>
+            </div>
+            <!-- End of #settings-1 -->
+
+            <div id="settings-2">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+				<form action="#" method="GET">
+                    <div class="spacer"></div>
+                    <p class="divider"></p>
+                    <div class="spacer"></div>
+                    <p>
+                        <label for="settings-email">Email Address:</label>
+                        <input type="text" id="settings-email" class="medium" />
+                    </p>
+                    <p>
+                        <label for="settings-interval">Interval: </label>
+                        <select name="settings-interval" id="settings-interval" data-placeholder="Choose an Interval">
+                            <option value=""></option>
+                            <option value="Never">Never</option>
+                            <option value="Daily">Daily</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Yearly">Yearly</option>
+                        </select>
+                    </p>
+                </form>
+            </div>
+            <!-- End of #settings-2 -->
+
+            <div id="settings-3">
+                <form action="#" method="GET">
+                    <p>
+                        <label for="settings-card-number">Card number:</label>
+                        <input type="text" id="settings-card-number" class="medium" />
+                    </p>
+                    <p>
+                        <label for="settings-cvv">CVV:</label>
+                        <input type="text" id="settings-cvv" class="medium" />
+                    </p>
+                    <p>
+                        <label for="settings-expiration">Expiration: </label>
+                        <select sname="settings-expiration" id="settings-expiration" data-placeholder="Choose an Expiration">
+                            <option value=""></option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                        </select>
+                    </p>
+                </form>
+            </div>
+            <!-- End of #settings-3 -->
+
+        </div>
+        <!-- End of .content -->
+
+        <div class="actions">
+            <div class="left">
+                <button class="grey cancel">Cancel</button>
+            </div>
+            <div class="right">
+                <button class="save">Save</button>
+                <button class="hide saving" disabled>Saving...</button>
+            </div>
+        </div>
+        <!-- End of .actions -->
+
+    </div>
+    <!-- End of settings dialog -->
+
+    <!-- Add Client Example Dialog -->
+    <div style="display: none;" id="dialog_add_client" title="Add Client Example Dialog">
+        <form action="" class="full validate">
+            <div class="row">
+                <label for="d2_username">
+                    <strong>Username</strong>
+                </label>
+                <div>
+                    <input class="required" type="text" name="d2_username" id="d2_username" />
+                </div>
+            </div>
+            <div class="row">
+                <label for="d2_email">
+                    <strong>Email Address</strong>
+                </label>
+                <div>
+                    <input class="required" type="text" name="d2_email" id="d2_email" />
+                </div>
+            </div>
+            <div class="row">
+                <label for="d2_role">
+                    <strong>Role</strong>
+                </label>
+                <div>
+                    <select style="padding-bottom: 10px" name="d2_role" id="d2_role" class="search required" data-placeholder="Choose a Role">
+                        <option value=""></option>
+                        <option value="Applicant">Applicant</option>
+                        <option value="Member">Member</option>
+                        <option value="Moderator">Moderator</option>
+                        <option value="Administrator">Administrator</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <div class="actions">
+            <div class="left">
+                <button class="grey cancel">Cancel</button>
+            </div>
+            <div class="right">
+                <button class="submit">Add User</button>
+            </div>
+        </div>
+    </div>
+    <!-- End if #dialog_add_client -->
+
+    <script type="text/javascript">
+        $$.ready(function () {
+            $("#dialog_add_client").dialog({
+                autoOpen: false,
+                modal: true,
+                width: 400,
+                open: function () { $(this).parent().css('overflow', 'visible'); $$.utils.forms.resize() }
+            }).find('button.submit').click(function () {
+                var $el = $(this).parents('.ui-dialog-content');
+                if ($el.validate().form()) {
+                    $el.find('form')[0].reset();
+                    $el.dialog('close');
+                }
+            }).end().find('button.cancel').click(function () {
+                var $el = $(this).parents('.ui-dialog-content');
+                $el.find('form')[0].reset();
+                $el.dialog('close');;
+            });
+
+            $(".open-add-client-dialog").click(function () {
+                $("#dialog_add_client").dialog("open");
+                return false;
+            });
+        });
+    </script>
+    <!--  End of Add Client Example Dialog -->
+
+    <!-- Message Dialog -->
+    <div style="display: none;" id="dialog_message" title="Conversation: John Doe">
+        <div class="spacer"></div>
+        <div class="messages full chat">
+
+            <div class="msg reply">
+                <img src="../img/icons/packs/iconsweets2/25x25/user-2.png" />
+                <div class="content">
+                    <h3><a href="pages_profile.html">John Doe</a> <span>says:</span><small>3 hours ago</small></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+					et dolore magna aliquyam erat, sed diam voluptua.
+                    </p>
+                </div>
+            </div>
+
+            <div class="msg">
+                <img src="../img/icons/packs/iconsweets2/25x25/user-2.png" />
+                <div class="content">
+                    <h3><a href="pages_profile.html">Peter Doe</a> <span>says:</span><small>5 hours ago</small></h3>
+                    <p>
+                        At vero eos et accusam et justo duo dolores et ea rebum.
+					Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- End of .messages -->
+
+        <div class="actions">
+            <div class="left">
+                <input style="width: 330px;" type="text" name="d3_message" id="d3_message" placeholder="Type your message..." />
+            </div>
+            <div class="right">
+                <button>Send</button>
+                <button class="grey">Cancel</button>
+            </div>
+        </div>
+        <!-- End of .actions -->
+
+    </div>
+    <!-- End of #dialog_message -->
+
+    <script type="text/javascript">
+        $$.ready(function () {
+            $("#dialog_message").dialog({
+                autoOpen: false,
+                width: 500,
+                modal: true
+            }).find('button').click(function () {
+                $(this).parents('.ui-dialog-content').dialog('close');
+            });
+
+            $(".open-message-dialog").click(function () {
+                $("#dialog_message").dialog("open");
+                return false;
+            });
+        });
+    </script>
+    <!-- End of Message Dialog -->
+
+    <!--------------------------------->
+    <!-- Now, the page itself begins -->
+    <!--------------------------------->
     <!-- The toolbar at the top -->
-	<section id="toolbar">
-		<div class="container_12">
-		
-			<!-- Left side -->
-			<div class="left">
-				<ul class="breadcrumb">
-				
-					<li><a href="dashboard.html">Mango</a></li>
-					<li><a href="javascript:void(0);">Dashboard</a></li>
+    <section id="toolbar">
+        <div class="container_12">
 
-				</ul>
-			</div>
-			<!-- End of .left -->
-			
-			<!-- Right side -->
-			<div class="right">
-				<ul>
-				
-					<li><a href="pages_profile.html"><span class="icon i14_admin-user"></span>Profile</a></li>
-					
-					@*<li>
+            <!-- Left side -->
+            <div class="left">
+                <ul class="breadcrumb">
+
+                    <li><a href="dashboard.html">Mango</a></li>
+                    <li><a href="javascript:void(0);">Dashboard</a></li>
+
+                </ul>
+            </div>
+            <!-- End of .left -->
+
+            <!-- Right side -->
+            <div class="right">
+                <ul>
+
+                    <li><a href="pages_profile.html"><span class="icon i14_admin-user"></span>Profile</a></li>
+
+                    @*<li>
 						<a href="#"><span>3</span>Messages</a>
 						
 						<!-- Mail popup -->
@@ -583,29 +607,33 @@
 							
 						</div><!-- End of .popup -->
 					</li><!-- End of li -->*@
-					
-					<li class="space"></li>
-					
-					<li><a href="javascript:void(0);" id="btn-lock"><span>--:--</span>Lock screen</a></li>
-					
-					<li class="red"><a href="login.html">Logout</a></li>
-					
-				</ul>
-			</div><!-- End of .right -->
-			
-			<!-- Phone only items -->
-			<div class="phone">
-				
-				<!-- User Link -->
-				<li><a href="pages_profile.html"><span class="icon icon-user"></span></a></li>
-				<!-- Navigation -->
-				<li><a class="navigation" href="#"><span class="icon icon-list"></span></a></li>
-			
-			</div><!-- End of phone items -->
-			
-		</div><!-- End of .container_12 -->
-	</section><!-- End of #toolbar -->
-@*<header>
+
+                    <li class="space"></li>
+
+                    <li><a href="javascript:void(0);" id="btn-lock"><span>--:--</span>Lock screen</a></li>
+
+                    <li class="red"><a href="login.html">Logout</a></li>
+
+                </ul>
+            </div>
+            <!-- End of .right -->
+
+            <!-- Phone only items -->
+            <div class="phone">
+
+                <!-- User Link -->
+                <li><a href="pages_profile.html"><span class="icon icon-user"></span></a></li>
+                <!-- Navigation -->
+                <li><a class="navigation" href="#"><span class="icon icon-list"></span></a></li>
+
+            </div>
+            <!-- End of phone items -->
+
+        </div>
+        <!-- End of .container_12 -->
+    </section>
+    <!-- End of #toolbar -->
+    @*<header>
     <div class="content-wrapper">
         <div class="float-left">
             <p class="site-title">
@@ -624,252 +652,306 @@
 
 </header>*@
     <!-- The header containing the logo -->
-	<header class="container_12">
-	
-		<!-- Your logos -->
-		<a href="dashboard.html"><img src="../img/logo.png" alt="Mango" width="191" height="60"></a>
-		<a class="phone-title" href="dashboard.html"><img src="../img/logo-mobile.png" alt="Mango" height="22" width="70" /></a>
-		
-		<div class="buttons">
-			<a href="statistics.html">
-				<span class="icon icon-sitemap"></span>
-				Settings
-			</a>
-			<a href="forms.html">
-				<span class="icon icon-list-alt"></span>
-				Forms
-			</a>
-			<a href="tables_dynamic.html">
-				<span class="icon icon-table"></span>
-				Tables
-			</a>
-		</div><!-- End of .buttons -->
-</header><!-- End of header -->
-<div role="main" id="main" class="container_12 clearfix">
+    <header class="container_12">
 
-    <!-- The blue toolbar stripe -->
-    <section class="toolbar">
-        <div class="user">
-            <div class="avatar">
-                <img src="../img/layout/content/toolbar/user/avatar.png">
-                <span>3</span>
-            </div>
-            <span>Administrator</span>
-            <ul>
-                <li><a href="javascript:$$.settings();">Settings</a></li>
-                <li><a href="pages_profile.html">Profile</a></li>
-                <li class="line"></li>
-                <li><a href="login.html">Logout</a></li>
-            </ul>
+        <!-- Your logos -->
+        <a href="dashboard.html">
+            <img src="../img/logo.png" alt="Mango" width="191" height="60"></a>
+        <a class="phone-title" href="dashboard.html">
+            <img src="../img/logo-mobile.png" alt="Mango" height="22" width="70" /></a>
+
+        <div class="buttons">
+            <a href="statistics.html">
+                <span class="icon icon-sitemap"></span>
+                Settings
+            </a>
+            <a href="forms.html">
+                <span class="icon icon-list-alt"></span>
+                Forms
+            </a>
+            <a href="tables_dynamic.html">
+                <span class="icon icon-table"></span>
+                Tables
+            </a>
         </div>
-        <ul class="shortcuts">
+        <!-- End of .buttons -->
+    </header>
+    <!-- End of header -->
+    <div role="main" id="main" class="container_12 clearfix">
 
-            <li>
-                <a href="javascript:void(0);"><span class="icon i24_user-business"></span></a>
-                <!-- Possible sizes: small/medium/large -->
-                <div class="small">
-                    <h3>Create a User</h3>
-
-                    <!-- Button bar -->
-                    <button class="button flat left grey" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Close</button>
-                    <button class="button flat right" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Create</button>
-
-                    <div class="content">
-                        <form class="full grid">
-                            <div class="row no-bg">
-                                <p class="_100 small">
-                                    <label for="p1_username">Username</label>
-                                    <input type="text" name=p1_username id=p1_username/>
-                                </p>
-                            </div>
-                            <div class="row no-bg">
-                                <p class="_50 small">
-                                    <label for="p1_firstname">Firstname</label>
-                                    <input type="text" name=p1_firstname id=p1_firstname/>
-                                </p>
-                                <p class="_50 small">
-                                    <label for="p1_lastname">Lastname</label>
-                                    <input type="text" name=p1_lastname id=p1_lastname/>
-                                </p>
-                            </div>
-                        </form>
-                    </div>
-                </div><!-- End of popup -->
-            </li>
-
-            <li>
-                <a href="javascript:void(0);"><span class="icon i24_inbox-document"></span></a>
-                <!-- Possible sizes: small/medium/large -->
-                <div class="small">
-                    <h3>Write a Message</h3>
-
-                    <!-- Button bar -->
-                    <button class="button flat left grey" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Close</button>
-                    <button class="button flat right" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Send</button>
-
-                    <div class="content">
-                        <form class="full grid">
-                            <div class="row no-bg">
-                                <p class="_100 small">
-                                    <input type="text" name=p2_recipient id=p2_recipient placeholder="Recipient"/>
-                                </p>
-                                <p class="_100 small">
-                                    <input type="text" name=p2_subject id=p2_subject placeholder="Subject"/>
-                                </p>
-                                <p class="_100 small">
-                                    <textarea rows=5 style="overflow: hidden; height: 45px; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;" name="p2_message" id="p2_message" placeholder="Message"></textarea>
-                                </p>
-                            </div>
-                        </form>
-                    </div>
-                </div><!-- End of popup -->
-            </li>
-
-            <li>
-                <a href="javascript:void(0);"><span class="icon i24_application-blue"></span></a>
-                <!-- Possible sizes: small/medium/large -->
-                <div class="small">
-                    <h3>Information</h3>
-
-                    <!-- Button bar -->
-                    <button class="button flat left grey" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Close</button>
-
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                    </div>
-                </div><!-- End of popup -->
-            </li>
-
-        </ul><!-- End of .shortcuts -->
-
-        @*<input type="search" data-source="extras/search.php" placeholder="Search..." autocomplete="off" class="tooltip" title="e.g. Peach" data-gravity=s>*@
-    </section><!-- End of .toolbar-->
-
-    <!-- The sidebar -->
-    <aside>
-        <div class="top">
-
-            <!-- Navigation -->
-            <nav><ul class="collapsible accordion">
-
-                <li class="current"><a href="dashboard.html"><img src="../img/icons/packs/fugue/16x16/dashboard.png" alt="" height=16 width=16>Dashboard</a></li>
+        <!-- The blue toolbar stripe -->
+        <section class="toolbar">
+            <div class="user">
+                <div class="avatar">
+                    <img src="../img/layout/content/toolbar/user/avatar.png">
+                    <span>3</span>
+                </div>
+                <span>Administrator</span>
+                <ul>
+                    <li><a href="javascript:$$.settings();">Settings</a></li>
+                    <li><a href="pages_profile.html">Profile</a></li>
+                    <li class="line"></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </div>
+            <ul class="shortcuts">
 
                 <li>
-                    <a href="javascript:void(0);"><img src="../img/icons/packs/fugue/16x16/ui-layered-pane.png" alt="" height=16 width=16>Office Setup<span class="badge">4</span></a>
-                    <ul>
-                        <li>@Html.ActionLink("Country", "Country", "Home")</li>
-                         <li>@Html.ActionLink("State", "State", "Home")</li>
-                        <li>@Html.ActionLink("Role", "Role", "Home")</li>
-                       
-                    </ul>
+                    <a href="javascript:void(0);"><span class="icon i24_user-business"></span></a>
+                    <!-- Possible sizes: small/medium/large -->
+                    <div class="small">
+                        <h3>Create a User</h3>
+
+                        <!-- Button bar -->
+                        <button class="button flat left grey" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Close</button>
+                        <button class="button flat right" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Create</button>
+
+                        <div class="content">
+                            <form class="full grid">
+                                <div class="row no-bg">
+                                    <p class="_100 small">
+                                        <label for="p1_username">Username</label>
+                                        <input type="text" name="p1_username" id="p1_username" />
+                                    </p>
+                                </div>
+                                <div class="row no-bg">
+                                    <p class="_50 small">
+                                        <label for="p1_firstname">Firstname</label>
+                                        <input type="text" name="p1_firstname" id="p1_firstname" />
+                                    </p>
+                                    <p class="_50 small">
+                                        <label for="p1_lastname">Lastname</label>
+                                        <input type="text" name="p1_lastname" id="p1_lastname" />
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End of popup -->
                 </li>
+
                 <li>
+                    <a href="javascript:void(0);"><span class="icon i24_inbox-document"></span></a>
+                    <!-- Possible sizes: small/medium/large -->
+                    <div class="small">
+                        <h3>Write a Message</h3>
+
+                        <!-- Button bar -->
+                        <button class="button flat left grey" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Close</button>
+                        <button class="button flat right" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Send</button>
+
+                        <div class="content">
+                            <form class="full grid">
+                                <div class="row no-bg">
+                                    <p class="_100 small">
+                                        <input type="text" name="p2_recipient" id="p2_recipient" placeholder="Recipient" />
+                                    </p>
+                                    <p class="_100 small">
+                                        <input type="text" name="p2_subject" id="p2_subject" placeholder="Subject" />
+                                    </p>
+                                    <p class="_100 small">
+                                        <textarea rows="5" style="overflow: hidden; height: 45px; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;" name="p2_message" id="p2_message" placeholder="Message"></textarea>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End of popup -->
+                </li>
+
+                <li>
+                    <a href="javascript:void(0);"><span class="icon i24_application-blue"></span></a>
+                    <!-- Possible sizes: small/medium/large -->
+                    <div class="small">
+                        <h3>Information</h3>
+
+                        <!-- Button bar -->
+                        <button class="button flat left grey" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Close</button>
+
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        </div>
+                    </div>
+                    <!-- End of popup -->
+                </li>
+
+            </ul>
+            <!-- End of .shortcuts -->
+
+            @*<input type="search" data-source="extras/search.php" placeholder="Search..." autocomplete="off" class="tooltip" title="e.g. Peach" data-gravity=s>*@
+        </section>
+        <!-- End of .toolbar-->
+
+        <!-- The sidebar -->
+        <aside>
+            <div class="top">
+
+                <!-- Navigation -->
+                <nav>
+                    <ul class="collapsible accordion">
+
+                        <li class="current"><a href="dashboard.html">
+                            <img src="../img/icons/packs/fugue/16x16/dashboard.png" alt="" height="16" width="16">Dashboard</a></li>
+
+                        <li>
+                            <a href="javascript:void(0);">
+                                <img src="../img/icons/packs/fugue/16x16/ui-layered-pane.png" alt="" height="16" width="16">Basic Data Setup<span class="badge">4</span></a>
+                            <ul>
+                                <li>@Html.ActionLink("Country", "Country", "Home")</li>
+                                <li>@Html.ActionLink("State", "State", "Home")</li>
+                                <li>@Html.ActionLink("Role", "Role", "Home")</li>
+                                <li>@Html.ActionLink("Department", "Department", "Home")</li>
+                                <li>@Html.ActionLink("Nationality", "Nationality", "Home")</li>
+                                <li>@Html.ActionLink("Gender", "Gender", "Home")</li>
+                                <li>@Html.ActionLink("Currency", "Currency", "Home")</li>
+                                <li>@Html.ActionLink("Identication Types", "Identificationtypes", "Home")</li>
+                                <li>@Html.ActionLink("Marital Statuses", "MaritalStatus", "Home")</li>
+                                <li>@Html.ActionLink("Entities", "Entity", "Home")</li>
+                                
+
+                            </ul>
+                        </li>
+
+                        <li>
                             <a href="javascript:void(0);">
                                 <img src="../img/icons/packs/fugue/16x16/application-form.png" alt="" height="16" width="16">Inventory Settings </a>
                             <ul>
                                 <li>@Html.ActionLink("Store Types", "StoreType", "InventorySetup")</li>
-                               @* <li>@Html.ActionLink("Units Of Measure", "Unit", "InventorySetup")</li>
+                                <li>@Html.ActionLink("Units Of Measure", "Unit", "InventorySetup")</li>
                                 <li>@Html.ActionLink("Brands", "Brand", "InventorySetup")</li>
                                 <li>@Html.ActionLink("Item Types", "ItemType", "InventorySetup")</li>
-                                <li>@Html.ActionLink("Compound Units", "CompoundUnit", "InventorySetup")</li>*@
+                                <li>@Html.ActionLink("Compound Units", "CompoundUnit", "InventorySetup")</li>
 
                                 @*<li><a href="forms_validation.html"><span class="icon icon-warning-sign"></span>Validation</a></li>
                                 <li><a href="forms_extras.html"><span class="icon icon-magic"></span>Fileuploader &amp; Wizard</a></li>*@
                             </ul>
                         </li>
-                <li>
-                    <a href="javascript:void(0);"><img src="../img/icons/packs/fugue/16x16/application-form.png" alt="" height=16 width=16>Policy Management </a>
-                    <ul>
-                        <li>@Html.ActionLink("Role Permision Setup", "Role", "Home")</li>
-                        <li><a href="forms_validation.html"><span class="icon icon-warning-sign"></span>Validation</a></li>
-                        <li><a href="forms_extras.html"><span class="icon icon-magic"></span>Fileuploader &amp; Wizard</a></li>
+
+                        <li>
+                            <a href="javascript:void(0);">
+                                <img src="../img/icons/packs/fugue/16x16/application-form.png" alt="" height="16" width="16">Office Settings </a>
+                            <ul>
+                                @*<li>@Html.ActionLink("Tax Master", "TaxMaster", "OfficeSetup")</li>*@
+                                <li>@Html.ActionLink("Office", "Offices", "OfficeSetup")</li>
+
+
+
+                                @*<li><a href="forms_validation.html"><span class="icon icon-warning-sign"></span>Validation</a></li>
+                                <li><a href="forms_extras.html"><span class="icon icon-magic"></span>Fileuploader &amp; Wizard</a></li>*@
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);">
+                                <img src="../img/icons/packs/fugue/16x16/application-form.png" alt="" height="16" width="16">Policy Management </a>
+                            <ul>
+                                <li>@Html.ActionLink("Role Permision Setup", "Role", "Home")</li>
+                                <li><a href="forms_validation.html"><span class="icon icon-warning-sign"></span>Validation</a></li>
+                                <li><a href="forms_extras.html"><span class="icon icon-magic"></span>Fileuploader &amp; Wizard</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);">
+                                <img src="../img/icons/packs/fugue/16x16/chart.png" alt="" height="16" width="16">Statistics / Charts<span class="badge">2</span></a>
+                            <ul>
+                                <li><a href="statistics.html"><span class="icon icon-sitemap"></span>Statistics Elements</a></li>
+                                <li><a href="charts.html"><span class="icon icon-bar-chart"></span>Charts</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);">
+                                <img src="../img/icons/packs/fugue/16x16/table.png" alt="" height="16" width="16">Tables</a>
+                            <ul>
+                                <li><a href="tables_static.html"><span class="icon icon-check-empty"></span>Static</a></li>
+                                <li><a href="tables_dynamic.html"><span class="icon icon-table"></span>Dynamic</a></li>
+                                <li><a href="tables_full.html"><span class="icon icon-fullscreen"></span>Full</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);">
+                                <img src="../img/icons/packs/fugue/16x16/document-horizontal.png" alt="" height="16" width="16">Other Pages</a>
+                            <ul>
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="pages_profile.html">Profile</a></li>
+                                <li><a href="pages_invoice.html">Invoice<span class="badge grey">1 open</span></a></li>
+                                <li><a href="pages_faq.html">FAQ</a></li>
+                                <li><a href="pages_search.html">Search</a></li>
+                                <li><a href="pages_error_404.html">Error Page (404)</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);"><img src="../img/icons/packs/fugue/16x16/chart.png" alt="" height=16 width=16>Statistics / Charts<span class="badge">2</span></a>
-                    <ul>
-                        <li><a href="statistics.html"><span class="icon icon-sitemap"></span>Statistics Elements</a></li>
-                        <li><a href="charts.html"><span class="icon icon-bar-chart"></span>Charts</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);"><img src="../img/icons/packs/fugue/16x16/table.png" alt="" height=16 width=16>Tables</a>
-                    <ul>
-                        <li><a href="tables_static.html"><span class="icon icon-check-empty"></span>Static</a></li>
-                        <li><a href="tables_dynamic.html"><span class="icon icon-table"></span>Dynamic</a></li>
-                        <li><a href="tables_full.html"><span class="icon icon-fullscreen"></span>Full</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);"><img src="../img/icons/packs/fugue/16x16/document-horizontal.png" alt="" height=16 width=16>Other Pages</a>
-                    <ul>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="pages_profile.html">Profile</a></li>
-                        <li><a href="pages_invoice.html">Invoice<span class="badge grey">1 open</span></a></li>
-                        <li><a href="pages_faq.html">FAQ</a></li>
-                        <li><a href="pages_search.html">Search</a></li>
-                        <li><a href="pages_error_404.html">Error Page (404)</a></li>
-                    </ul>
-                </li>
-
-            </ul></nav><!-- End of nav -->
-        </div><!-- End of .top -->
-
-        <div class="bottom sticky">
-            <div class="divider"></div>
-            <div class="progress">
-                <div class="bar" data-title="Space" data-value="1285" data-max="5120" data-format="0,0 MB"></div>
-                <div class="bar" data-title="Traffic" data-value="8.61" data-max="14" data-format="0.00 GB"></div>
-                <div class="bar" data-title="Budget" data-value="20000" data-max="20000" data-format="$0,0"></div>
+                </nav>
+                <!-- End of nav -->
             </div>
-            <div class="divider"></div>
-            <div class="buttons">
-                <a href="javascript:void(0);" class="button grey open-add-client-dialog">Add New Client</a>
-                <a href="javascript:void(0);" class="button grey open-add-client-dialog">Open a Ticket</a>
-            </div>
-        </div><!-- End of .bottom -->
+            <!-- End of .top -->
 
-    </aside><!-- End of sidebar -->
-    <section id="content" class="container_12 clearfix" data-sort=true>
-        <div style="margin: 10px;">
-            @RenderBody()
-        </div>
-      
-    </section>
-</div>
+            <div class="bottom sticky">
+                <div class="divider"></div>
+                <div class="progress">
+                    <div class="bar" data-title="Space" data-value="1285" data-max="5120" data-format="0,0 MB"></div>
+                    <div class="bar" data-title="Traffic" data-value="8.61" data-max="14" data-format="0.00 GB"></div>
+                    <div class="bar" data-title="Budget" data-value="20000" data-max="20000" data-format="$0,0"></div>
+                </div>
+                <div class="divider"></div>
+                <div class="buttons">
+                    <a href="javascript:void(0);" class="button grey open-add-client-dialog">Add New Client</a>
+                    <a href="javascript:void(0);" class="button grey open-add-client-dialog">Open a Ticket</a>
+                </div>
+            </div>
+            <!-- End of .bottom -->
+
+        </aside>
+        <!-- End of sidebar -->
+        <section id="content" class="container_12 clearfix" data-sort="true">
+            <div style="margin: 10px;">
+                @RenderBody()
+            </div>
+
+        </section>
+    </div>
     <!-- The footer -->
-	<footer class="container_12">
-		<ul class="grid_6">
-			<li><a href="#">About</a></li>
-			<li><a href="#">Jobs</a></li>
-			
-		</ul>
-		
-		<span class="grid_6">
-			Copyright &copy; 2012 YourCompany
-		</span>
-	</footer><!-- End of footer -->
-	
-	<!-- Spawn $$.loaded -->
-	<script>
-	    $$.loaded();
-	</script>
-	
-	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+    <footer class="container_12">
+        <ul class="grid_6">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Jobs</a></li>
+
+        </ul>
+
+        <span class="grid_6">Copyright &copy; 2012 YourCompany
+        </span>
+    </footer>
+    <!-- End of footer -->
+
+    <!-- Spawn $$.loaded -->
+<script>
+    $$.loaded();
+</script>
+
+    @*<script>
+
+        $$.loaded();
+
+</script>
+
+    <div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div" style="position: absolute; top: 1700.08px; left: 576.683px; z-index: 1; display: block;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a title="Prev" onclick="DP_jQuery_1454404849523.datepicker._adjustDate('#f3_date', -1, 'M');" class="ui-datepicker-prev ui-corner-all"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a title="Next" onclick="DP_jQuery_1454404849523.datepicker._adjustDate('#f3_date', +1, 'M');" class="ui-datepicker-next ui-corner-all"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">February</span>&nbsp;<span class="ui-datepicker-year">2016</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th><span title="Monday">Mo</span></th><th><span title="Tuesday">Tu</span></th><th><span title="Wednesday">We</span></th><th><span title="Thursday">Th</span></th><th><span title="Friday">Fr</span></th><th class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">31</span></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">1</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" ui-datepicker-days-cell-over  ui-datepicker-today"><a href="#" class="ui-state-default ui-state-highlight">2</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">3</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">4</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">5</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">6</a></td></tr><tr><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">7</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">8</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">9</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">10</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">11</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">12</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">13</a></td></tr><tr><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">14</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">15</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">16</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">17</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">18</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">19</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">20</a></td></tr><tr><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">21</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">22</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">23</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">24</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">25</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">26</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">27</a></td></tr><tr><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">28</a></td><td onclick="DP_jQuery_1454404849523.datepicker._selectDay('#f3_date',1,2016, this);return false;" class=" "><a href="#" class="ui-state-default">29</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td></tr></tbody></table><div class="ui-datepicker-buttonpane ui-widget-content"><button onclick="DP_jQuery_1454404849523.datepicker._gotoToday('#f3_date');" class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all" type="button">Today</button><button onclick="DP_jQuery_1454404849523.datepicker._hideDatepicker();" class="ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all" type="button">Close</button></div></div>*@
+
+
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
 	   chromium.org/developers/how-tos/chrome-frame-getting-started -->
-	<!--[if lt IE 7 ]>
+    <!--[if lt IE 7 ]>
 	<script defer src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 	<script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
-	
 
 
 
 
-@*@RenderSection("scripts", required: false)*@
+
+    @*@RenderSection("scripts", required: false)*@
 </body>
 </html>
 

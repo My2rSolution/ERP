@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="2RERP.Domain.Office, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\2RERP.WebUI\Bin\2RERP.Domain.Office.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.0.0\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
@@ -74,25 +78,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="IEntities.cs" />
     <Compile Include="ICountries.cs" />
-    <Compile Include="IDepartments.cs" />
-    <Compile Include="IFiscalyear.cs" />
-    <Compile Include="IGender.cs" />
-    <Compile Include="IGroup.cs" />
-    <Compile Include="IHolidays.cs" />
+    <Compile Include="ICurrency.cs" />
+    <Compile Include="IDepartments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IGender.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="IIdentificationtypes.cs" />
-    <Compile Include="Imaritalstatuses.cs" />
-    <Compile Include="IMenuChild.cs" />
-    <Compile Include="IMenuPermissionWithRole.cs" />
-    <Compile Include="IMenus.cs" />
+    <Compile Include="IMaritalstatuses.cs" />
     <Compile Include="INationality.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IRoles.cs" />
     <Compile Include="IStates.cs" />
-    <Compile Include="IVerificationstatuses.cs" />
-    <Compile Include="IWeekdays.cs" />
-    <Compile Include="IZipcodes.cs" />
-    <Compile Include="IZipcodetypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

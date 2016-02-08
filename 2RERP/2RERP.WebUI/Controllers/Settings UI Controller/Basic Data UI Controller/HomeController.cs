@@ -26,5 +26,41 @@ namespace _2RERP.WebUI.Controllers
         {
             return View();
         }
+
+        public ActionResult Department()
+        {
+            return View();
+        }
+
+        public ActionResult Gender()
+        {
+            return View();
+        }
+
+        public ActionResult Nationality()
+        {
+            return View();
+        }
+
+        public ActionResult Currency()
+        {
+            return View();
+        }
+
+        public ActionResult Identificationtypes()
+        {
+            return View();
+        }
+
+        public ActionResult MaritalStatus()
+        {
+            return View();
+        }
+
+        public ActionResult Entity()
+        {
+            return View();
+        }
+        
     }
 }

@@ -2,51 +2,5 @@
     ViewBag.Title = "Group";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/css/angular.treeview.css" rel="stylesheet" />
-<script src="~/Scripts/angular.js"></script>
-<script src="~/Scripts/AngularApp/CommonModule/dirPagination.js"></script>
-@*<script src="~/Scripts/AngularApp/CommonModule/app.js"></script>*@
-<script src="~/Scripts/AngularApp/Controller/MenuController.js"></script>
 
 <h2>Group</h2>
-<div ng-app="myAppp">
-    @* <div ng-controller="TreeViewController">
-        <script type="text/ng-template" id="index.html">
-            <ul>
-                <li ng-repeat="item in MenuItems">  
-            <input type="checkbox" name="itemselection" ng-model="item._Selected" /> 
-                     {{item.text}}
-                 <div ng-include="'index.html'" onload="MenuItems=item.children"></div>
-                </li>
-            </ul>
-        </script>
-        <div ng-include="'index.html'" onload="MenuItems=SourceItems"></div>
-       
-    </div>*@
-    <div ng-controller="myController">
-        <div>
-      <input type="button" value="TREE MODEL 1" data-ng-click="roleList = roleList1" /> <input type="button" value="TREE MODEL 2" data-ng-click="roleList = roleList2" />
-    </div>
-
-    <div style="margin:10px 0 30px 0; padding:10px; background-color:#EEEEEE; border-radius:5px; font:12px Tahoma;">
-      <span><b>Selected Node</b> : {{currentNode.roleName}}</span>
-    </div>
-
-    <!--
-      [TREE attribute]
-      angular-treeview: the treeview directive
-      tree-model : the tree model on $scope.
-      node-id : each node's id
-      node-label : each node's label
-      node-children: each node's children
-    -->
-    <div
-      data-angular-treeview="true"
-      data-tree-model="roleList"
-      data-node-id="text"
-      data-node-label="textId"
-      data-node-children="children" >
-    </div>
-        <pre>{{roleList1 | json}}</pre>
-    </div>
-</div>

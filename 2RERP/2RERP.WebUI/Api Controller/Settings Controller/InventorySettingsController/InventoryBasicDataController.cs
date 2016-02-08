@@ -21,14 +21,18 @@ namespace _2RERP.WebUI.Controllers
 {
     public class InventoryBasicDataController : ApiController
     {
-       
-       
-       
+        private readonly ICompoundUnits _compoundUnits;
+        private readonly IItemTypes _itemTypes;
+        private readonly IBrands _brands;
+        private readonly IUnits _units;
         private readonly IStoreTypes _storeTypes;
 
-        public InventoryBasicDataController(IStoreTypes storeTypes) //, ICompoundUnits compoundUnits 
+        public InventoryBasicDataController(IStoreTypes storeTypes, IBrands brands, IItemTypes itemTypes, IUnits units, ICompoundUnits compoundUnits) //, ICompoundUnits compoundUnits 
         {
-          
+            _compoundUnits = compoundUnits;
+            _itemTypes = itemTypes;
+            _brands = brands;
+            _units = units;
             _storeTypes = storeTypes;
         }
 
@@ -110,288 +114,288 @@ namespace _2RERP.WebUI.Controllers
 
         
 
-    //    // Get All CompoundUnit by Get Method
+        // Get All CompoundUnit by Get Method
 
-    //    [System.Web.Http.HttpGet]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("CompoundUnit")]
-    //    public JArray GetCompoundUnit()
-    //    {
-    //        try
-    //        {
-    //            IList<CompoundUnits> objCompoundUnits = new List<CompoundUnits>();
-    //            objCompoundUnits = _compoundUnits.GetAllData();
-    //            return JArray.Parse(objCompoundUnits.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("CompoundUnit")]
+        public JArray GetCompoundUnit()
+        {
+            try
+            {
+                IList<CompoundUnits> objCompoundUnits = new List<CompoundUnits>();
+                objCompoundUnits = _compoundUnits.GetAllData();
+                return JArray.Parse(objCompoundUnits.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
-    //    }
+        }
 
-    //    //
+        //
 
-    //    // Insert New CompoundUnit by Post Method
+        // Insert New CompoundUnit by Post Method
 
-    //    [System.Web.Http.HttpPost]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("CompoundUnit")]
-    //    public JArray PostCompoundUnit(CompoundUnits obj)    //insert data to the user table
-    //    {
-    //        try
-    //        {
-    //            _units.AddCompoundUnits(obj);//.AddCompoundUnit(obj);
-    //            return GetCompoundUnit();
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
-    //    }
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("CompoundUnit")]
+        public JArray PostCompoundUnit(CompoundUnits obj)    //insert data to the user table
+        {
+            try
+            {
+                _units.AddCompoundUnits(obj);//.AddCompoundUnit(obj);
+                return GetCompoundUnit();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-    //    //
+        //
 
-    //    // Update CompoundUnit Objects.....
+        // Update CompoundUnit Objects.....
 
-    //    [System.Web.Http.HttpPut]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("CompoundUnit")]
-    //    public JArray PutCompoundUnit(CompoundUnits obj) //for Update
-    //    {
-    //        try
-    //        {
-    //            _units.UpdateCompoundUnits(obj); //.UpdateCompoundUnit(obj);
-    //            return GetCompoundUnit();
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
-    //    }
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("CompoundUnit")]
+        public JArray PutCompoundUnit(CompoundUnits obj) //for Update
+        {
+            try
+            {
+                _units.UpdateCompoundUnits(obj); //.UpdateCompoundUnit(obj);
+                return GetCompoundUnit();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-    //    // Get All Unit by Get Method
+        // Get All Unit by Get Method
 
-    //    [System.Web.Http.HttpGet]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("Unit")]
-    //    public JArray GetUnit()
-    //    {
-    //        try
-    //        {
-    //            IList<Units> objUnits = new List<Units>();
-    //            objUnits = _units.GetAllData();
-    //            return JArray.Parse(objUnits.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("Unit")]
+        public JArray GetUnit()
+        {
+            try
+            {
+                IList<Units> objUnits = new List<Units>();
+                objUnits = _units.GetAllData();
+                return JArray.Parse(objUnits.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
-    //    }
+        }
 
-    //    //
+        //
 
-    //    // Insert New Unit by Post Method
+        // Insert New Unit by Post Method
 
-    //    [System.Web.Http.HttpPost]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("Unit")]
-    //    public JArray PostUnit(Units obj)    //insert data to the user table
-    //    {
-    //        try
-    //        {
-    //            int unitid = _units.NextSequenceId(obj);
-    //            obj.unit_id = unitid;
-    //            obj.audit_ts = DateTime.Now;
-    //            _units.Create(obj);
-    //            return GetUnit();
-    //            //ObjectId i;
-    //            //i = _units.Create(obj);
-    //            //IList<Units> objUnits = new List<Units>();
-    //            //objUnits = _units.GetAllData();
-    //            //return JArray.Parse(objUnits.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
-    //    }
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("Unit")]
+        public JArray PostUnit(Units obj)    //insert data to the user table
+        {
+            try
+            {
+                int unitid = _units.NextSequenceId(obj);
+                obj.unit_id = unitid;
+                obj.audit_ts = DateTime.Now;
+                _units.Create(obj);
+                return GetUnit();
+                //ObjectId i;
+                //i = _units.Create(obj);
+                //IList<Units> objUnits = new List<Units>();
+                //objUnits = _units.GetAllData();
+                //return JArray.Parse(objUnits.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-    //    //
+        //
 
-    //    // Update Unit Objects.....
+        // Update Unit Objects.....
 
-    //    [System.Web.Http.HttpPut]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("Unit")]
-    //    public JArray PutUnit(Units obj) //for Update
-    //    {
-    //        try
-    //        {
-    //            _units.Update(obj);
-    //            return GetUnit();
-    //            //IList<Units> objUnits = new List<Units>();
-    //            //objUnits = _units.GetAllData();
-    //            //return JArray.Parse(objUnits.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
-    //    }
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("Unit")]
+        public JArray PutUnit(Units obj) //for Update
+        {
+            try
+            {
+                _units.Update(obj);
+                return GetUnit();
+                //IList<Units> objUnits = new List<Units>();
+                //objUnits = _units.GetAllData();
+                //return JArray.Parse(objUnits.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-    //    //
+        //
 
-    //    // Get All Brand by Get Method
+        // Get All Brand by Get Method
 
-    //    [System.Web.Http.HttpGet]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("Brand")]
-    //    public JArray GetBrand()
-    //    {
-    //        try
-    //        {
-    //            IList<Brands> objBrands = new List<Brands>();
-    //            objBrands = _brands.GetAllData();
-    //            return JArray.Parse(objBrands.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("Brand")]
+        public JArray GetBrand()
+        {
+            try
+            {
+                IList<Brands> objBrands = new List<Brands>();
+                objBrands = _brands.GetAllData();
+                return JArray.Parse(objBrands.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
-    //    }
+        }
 
-    //    //
+        //
 
-    //    // Insert New Brand by Post Method
+        // Insert New Brand by Post Method
 
-    //    [System.Web.Http.HttpPost]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("Brand")]
-    //    public JArray PostBrand(Brands objBrand)    //insert data to the user table
-    //    {
-    //        try
-    //        {
-    //            int roleid = _brands.NextSequenceId(objBrand);
-    //            objBrand.brand_id = roleid;
-    //            objBrand.audit_ts = DateTime.Now;
-    //            _brands.Create(objBrand);
-    //            return GetBrand();
-    //            //ObjectId i;
-    //            //i = 
-    //            //_brands.Create(objBrand);
-    //            //IList<Brands> objrBrandses = new List<Brands>();
-    //            //objrBrandses = _brands.GetAllData();
-    //            //return JArray.Parse(objrBrandses.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("Brand")]
+        public JArray PostBrand(Brands objBrand)    //insert data to the user table
+        {
+            try
+            {
+                int roleid = _brands.NextSequenceId(objBrand);
+                objBrand.brand_id = roleid;
+                objBrand.audit_ts = DateTime.Now;
+                _brands.Create(objBrand);
+                return GetBrand();
+                //ObjectId i;
+                //i = 
+                //_brands.Create(objBrand);
+                //IList<Brands> objrBrandses = new List<Brands>();
+                //objrBrandses = _brands.GetAllData();
+                //return JArray.Parse(objrBrandses.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
-    //    }
+        }
 
-    //    //
+        //
 
-    //    // Update Brands Objects.....
+        // Update Brands Objects.....
 
-    //    [System.Web.Http.HttpPut]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("Brand")]
-    //    public JArray PutBrand(Brands obj)
-    //    {
-    //        try
-    //        {
-    //            _brands.Update(obj);
-    //            return GetBrand();
-    //            //IList<Brands> objBrands = new List<Brands>();
-    //            //objBrands = _brands.GetAllData();
-    //            //return JArray.Parse(objBrands.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("Brand")]
+        public JArray PutBrand(Brands obj)
+        {
+            try
+            {
+                _brands.Update(obj);
+                return GetBrand();
+                //IList<Brands> objBrands = new List<Brands>();
+                //objBrands = _brands.GetAllData();
+                //return JArray.Parse(objBrands.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
-    //    }
+        }
 
-    //    //
+        //
 
-    //    // Get All ItemType by Get Method
+        // Get All ItemType by Get Method
 
-    //    [System.Web.Http.HttpGet]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("ItemType")]
-    //    public JArray GetItemType()
-    //    {
-    //        try
-    //        {
-    //            IList<ItemTypes> objItemType = new List<ItemTypes>();
-    //            objItemType = _itemTypes.GetAllData();
-    //            return JArray.Parse(objItemType.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
-    //    }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("ItemType")]
+        public JArray GetItemType()
+        {
+            try
+            {
+                IList<ItemTypes> objItemType = new List<ItemTypes>();
+                objItemType = _itemTypes.GetAllData();
+                return JArray.Parse(objItemType.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-    //    //
+        //
 
-    //    // Insert New ItemType by Post Method
+        // Insert New ItemType by Post Method
 
-    //    [System.Web.Http.HttpPost]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("ItemType")]
-    //    public JArray PostItemType(ItemTypes objItemType)    //insert data to the user table
-    //    {
-    //        try
-    //        {
-    //            int itemtypeid = _itemTypes.NextSequenceId(objItemType);
-    //            objItemType.item_type_id = itemtypeid;
-    //            objItemType.audit_ts = DateTime.Now;
-    //            _itemTypes.Create(objItemType);
-    //            return GetItemType();
-    //            //ObjectId i;
-    //            //i = 
-    //            //_itemTypes.Create(objItemType);
-    //            //IList<ItemTypes> objItemTypes = new List<ItemTypes>();
-    //            //objItemTypes = _itemTypes.GetAllData();
-    //            //return JArray.Parse(objItemTypes.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("ItemType")]
+        public JArray PostItemType(ItemTypes objItemType)    //insert data to the user table
+        {
+            try
+            {
+                int itemtypeid = _itemTypes.NextSequenceId(objItemType);
+                objItemType.item_type_id = itemtypeid;
+                objItemType.audit_ts = DateTime.Now;
+                _itemTypes.Create(objItemType);
+                return GetItemType();
+                //ObjectId i;
+                //i = 
+                //_itemTypes.Create(objItemType);
+                //IList<ItemTypes> objItemTypes = new List<ItemTypes>();
+                //objItemTypes = _itemTypes.GetAllData();
+                //return JArray.Parse(objItemTypes.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
-    //    }
+        }
 
-    //    //
+        //
 
-    //    // Update ItemTypes Objects.....
+        // Update ItemTypes Objects.....
 
-    //    [System.Web.Http.HttpPut]
-    //    [System.Web.Http.AllowAnonymous]
-    //    [System.Web.Http.ActionName("ItemType")]
-    //    public JArray PutItemType(ItemTypes obj)
-    //    {
-    //        try
-    //        {
-    //            _itemTypes.Update(obj);
-    //            return GetItemType();
-    //            //IList<ItemTypes> objItemTypes = new List<ItemTypes>();
-    //            //objItemTypes = _itemTypes.GetAllData();
-    //            //return JArray.Parse(objItemTypes.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
-    //        }
-    //        catch (Exception)
-    //        {
-    //            throw;
-    //        }
-    //    }
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.AllowAnonymous]
+        [System.Web.Http.ActionName("ItemType")]
+        public JArray PutItemType(ItemTypes obj)
+        {
+            try
+            {
+                _itemTypes.Update(obj);
+                return GetItemType();
+                //IList<ItemTypes> objItemTypes = new List<ItemTypes>();
+                //objItemTypes = _itemTypes.GetAllData();
+                //return JArray.Parse(objItemTypes.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.Strict }));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-    //    //
+        //
         
 
     }
