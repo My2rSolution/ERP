@@ -1,0 +1,12 @@
+
+<div class="custom-select" data-ng-disabled="gs.controlDisabled=='true'" data-ng-class="controlClass" data-ng-click="gs.toggleOpen()">
+    <p ng-if="!gs.currentMember.menu_text">Please Select an Item</p>
+    <p>{{gs.currentMember.menu_text}} </p>
+    <span><i class="icon-sort-down"></i></span>
+    <div class="list" data-ng-show="gs.isOpen">
+        <ul>
+            <li data-ng-class="{'active':gs.currentMember.menu_id === member.menu_id}" ui-if="Menu" data-ng-include="'../template/sub-level.html'" data-ng-repeat="member in Menus"> </li>
+        </ul>
+    </div>
+
+</div>
