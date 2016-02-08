@@ -1,0 +1,117 @@
+﻿@model _2RERP.Domain.Common.Countries
+
+@{
+    ViewBag.Title = "Country";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/typographics.css">
+<link href="~/css/ng-grid.css" rel="stylesheet" />
+<link href="~/css/ng-grid.min.css" rel="stylesheet" />
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/dirPagination.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/app.js"></script>
+<script src="~/Scripts/AngularApp/Controller/CountriesController.js"></script>
+<script src="~/Scripts/ng-grid.js"></script>
+
+<script src="~/Scripts/ng-grid.debug.js"></script>
+
+<!-- Custom Styles -->
+<link rel="stylesheet" href="../css/Custom.css">
+<div ng-app="myApp">
+    <div ng-controller="CountryController">
+        <h1 class="grid_12">Country  </h1>
+        @{
+            Html.RenderPartial("_CommonControllerForForm");
+        }
+        <div ng-show="showdiv">
+            <form id="frm1" name="frm" novalidate class="grid_12 no-box">
+                <fieldset>
+                    <legend>Group</legend>
+                    <div class="content">
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Country Code </strong>
+                            </label>
+                            <div style="margin-left: 196px;">
+                                <input id="CustomerCode" required pattern="[A-Z]{2,2}" name="countrycode" ng-model="Country.country_code" type="text" />
+                                @*  <span ng-show="!frm.countrycode.$valid">Country code is required !!</span>*@
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Country Name </strong>
+                            </label>
+                            <div style="margin-left: 196px;">
+                                <input id="CustomerName" required ng-model="Country.country_name" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">                       
+                        <div class="right">
+                            <input id="btnCountryInsert" ng-disabled="!frm.$valid" ng-show="DisplayUpdate" type="button" value="Add" ng-click="Insert()" />
+                            <input id="btnCountryUpdate" ng-show="DisplayUpdatebtn" type="button" value="Update" ng-click="btnCountryUpdate()" />
+                        </div>
+                    </div>
+                    <!-- End of .actions -->
+                </fieldset>
+            </form>
+        </div>
+        <div ng-show="GriedCountry">
+            <div class="grid_12 ">
+                <div class="box with-table">
+                    <div class="header">
+                        <h2>Country List</h2>
+                    </div>
+                    <div class="content">
+
+                        <div class="dataTables_wrapper">
+                            <div class="filters" style="display: block;">
+                                <div>
+                                    <label><span class="text">Search:</span>
+                                        <input type="text" ng-model="search" class="form-control" placeholder="Search"></label>
+                                </div>
+
+                            </div>
+                            <table class="dynamic styled dataTable">
+                                <!-- OPTIONAL: class=with-prev-next -->
+                                <thead>
+                                    <tr>
+                                        <th ng-click="sort('country_code')"><label>Country Code</label> 
+                                <span class="glyphicon sort-icon" ng-show="sortKey=='country_code'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                        </th>
+                                        <th ng-click="sort('country_name')"><label>Country Name</label>
+                                <span class="glyphicon sort-icon" ng-show="sortKey=='country_name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                        </th>
+                                        <th><label>Action</label></th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr dir-paginate="Country in Countries|orderBy:sortKey:reverse|filter:search|itemsPerPage:10">
+                                        <td>{{Country.country_code}}</td>
+                                        <td>{{Country.country_name}}</td>
+                                        <td>
+                                            <input id="btnEdit" type="button" value="Edit " ng-click="editRow(Country)" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="footer">                              
+                                <dir-pagination-controls
+                                    max-size="5"
+                                    direction-links="true"
+                                    boundary-links="true" class="ng-isolate-scope">
+                                </dir-pagination-controls>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>               
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,160 @@
+﻿@{
+    ViewBag.Title = "PermissionView";
+}
+
+<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+<link href="../css/s.css" rel="stylesheet" />
+<link href="../css/s2.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/typographics.css">
+<link href="~/css/nestedCombobox.css" rel="stylesheet" />
+@*<script src="~/Scripts/AngularApp/Controller/kendo.all.min.js"></script>*@
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/dirPagination.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/app.js"></script>
+<script src="../Scripts/AngularApp/CommonModule/index.js"></script>
+@*<script src="~/Scripts/AngularApp/Controller/KendoTreeView.js"></script>*@
+@*<link href="~/css/kendo.common.min.css" rel="stylesheet"/>
+<link href="~/css/kendo.default.min.css" rel="stylesheet"/>*@
+<link rel="stylesheet" href="~/css/Custom.css">
+<div ng-app="myApp">
+    <div ng-controller="treeTable">
+        <h1 class="grid_12">Permission Setup </h1>
+        <div>
+            <form id="frm1" name="frm" novalidate class="grid_12 no-box">
+                @*<form id="frm1" class="grid_12 no-box">*@
+                <fieldset>
+                    <legend>Group</legend>
+                    <div class="content">
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Group Name </strong>
+                            </label>
+                            <div style="margin-left: 196px;" class="">
+                                <div id="f2_select2_chzn" class="chzn-container chzn-container-single chzn-container-single-nosearch" style="width: 100%;">
+
+                                    <select class="chzn-single" name="mySelect" id="mySelect" ng-options="r.role_name for r in Roles track by r.role_id" ng-model="Role">
+                                        <option value="">--- Select Role ---</option>
+                                    </select>
+                                  
+                                  @*  <span>Selected :- {{Role.role_name}}</span>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span style="float: left; margin-bottom: 10px; margin-top: 10px;width: 100%">Assigning Role for:- <b>{{Role.role_name}}</b></span>
+                            <ul class="treeview">
+                                <li>
+                                    <input ng-checked="(list | selected).length == list.length" ng-click="toggleAllCheckboxes($event)" type="checkbox"/>
+                                    <span>Check All</span>
+                                    <ul class="treeulid">
+                                        <div ng-class="{opened: item.opened}" ng-include="&#39;table_tree2.html&#39;" ng-repeat="item in list"></div>
+                                       
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        @*<table class="styled">
+                            <thead>
+                                <tr>
+                                     <td><input type="checkbox" onchange="$(this).parents('table').find(':checkbox').attr('checked', $(this).attr('checked') || false)"></td>
+                                    <th class="cell-input">
+                                        <input ng-checked="(list | selected).length == list.length" ng-click="toggleAllCheckboxes($event)" type="checkbox" />
+                                    </th>
+                                    <th>Menu Name
+                                    </th>
+                                    <th class="cell-members">Access Type
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody ng-class="{opened: item.opened}" ng-include="&#39;table_tree.html&#39;" ng-repeat="item in list"></tbody>
+                        </table>*@
+                        @* <script id="table_tree.html" type="text/ng-template">
+                                <tr ng-class="{parent: item.child}" ng-init="parentScope = $parent.$parent; initCheckbox(item, parentScope.item)">
+                                  <td class="cell-input">
+                                    <input ng-change="toggleCheckbox(item, parentScope)" ng-model="item.selected" type="checkbox" />
+                                  </td>
+                                  <td class="cell-name" ng-click="item.opened = !item.opened">
+                                    <div class="indent" style="padding-left: {{15*level}}px"></div>
+                                    {{item.menu_text}}          
+                                  </td>
+                                  <td class="cell-members">
+                                    <div style="float: right;width: 175px;"><span><input type="checkbox" /> Read</span> <span><input type="checkbox" /> Write</span> <span><input type="checkbox" /> Delete</span></div>
+     
+                                  </td>
+     
+                                </tr>
+                                <tr class="children" ng-if="item.child &amp;&amp; item.child.length &gt; 0">
+                                  <td colspan="3">
+                                    <table>
+                                      <tbody ng-class="{opened: item.opened}" ng-include="&#39;table_tree.html&#39;" ng-init="level = level + 1" ng-repeat="item in item.child"></tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </script>*@
+                      @*  <script id="table_tree.html" type="text/ng-template">
+                                <tr ng-class="{parent: item.child}" ng-init="parentScope = $parent.$parent; initCheckbox(item, parentScope.item)">
+                                  <td class="cell-input">
+                                    <input ng-change="toggleCheckbox(item, parentScope)" ng-model="item.selected" type="checkbox" />
+                                  </td>
+                                  <td class="cell-name" ng-click="item.opened = !item.opened">
+                                    <div class="indent"></div>
+                                    {{item.menu_text}}          
+                                  </td>
+                                  <td class="cell-members">
+                                    <div><span><input  type="checkbox" /> Read</span> <span><input  type="checkbox" value="{{ item.menu_id }}" /> Write</span> <span><input type="checkbox" value="{{ item.menu_id }}" /> Delete</span></div>
+     
+                                  </td>
+     
+                                </tr>
+                                <tr class="children" ng-if="item.child &amp;&amp; item.child.length &gt; 0">
+                                  <td colspan="3">
+                                    <table>
+                                      <tbody ng-class="{opened: item.opened}" ng-include="&#39;table_tree.html&#39;" ng-init="level = level + 1" ng-repeat="item in item.child"></tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </script>*@
+                             <script id="table_tree2.html" type="text/ng-template">
+                                <li ng-class="{parent: item.child}" ng-init="parentScope = $parent.$parent; initCheckbox(item, parentScope.item)">
+                                 <span class="cell-input"> <input ng-change="toggleCheckbox(item, parentScope)" ng-model="item.selected" type="checkbox" /></span>
+                                 <span class="cell-name" ng-click="item.opened = !item.opened"> <div class="indent"></div> {{item.menu_text}} </span>
+                                <span> <div class="cell-members">Access Type :- <span><input type="checkbox"  id="IsRead_{{item.menu_id}}"  value="{{ item.menu_id }}"/> Read</span> <span><input type="checkbox"  id="IsWrite_{{item.menu_id}}" value="{{ item.menu_id }}"/> Write</span> <span><input type="checkbox"  id="IsDelete_{{item.menu_id}}" value="{{ item.menu_id }}"/> Delete</span></div></span>
+                                </li>
+                                  
+                                <li class="children" ng-if="item.child &amp;&amp; item.child.length &gt; 0">
+                                  <ul>
+                                    <li>
+                                      <div ng-class="{opened: item.opened}" ng-include="&#39;table_tree2.html&#39;" ng-init="level = level + 1" ng-repeat="item in item.child"></div>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </script>
+                        @* <div>
+                              <nested-combo-box control-class="col-md-7" control-disabled="false" change-event="demo.changeItem" collection="demo.Menus" current-member="demo.activeItem"/>
+                        </div>*@
+
+                        @* <div class="col code">
+                            <p>Selected item:</p>
+                            <pre>{{demo.selectedItem | json}}</pre>
+                        </div>*@
+
+
+
+                    </div>
+                    <div class="actions">
+                        <div class="right">
+                            <input id="btnStateInsert" type="button" value="Add" ng-click="InsertPermission()" />
+                            @*<input id="btnStateUpdate" type="button" value="Update" ng-show="DisplayUpdatebtn" ng-click="btnStateUpdate()" />*@
+                        </div>
+                    </div>
+                    <!-- End of .actions -->
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+</div>

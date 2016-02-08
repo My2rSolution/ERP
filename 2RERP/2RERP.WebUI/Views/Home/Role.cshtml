@@ -1,0 +1,203 @@
+﻿@model _2RERP.Domain.Common.Roles
+
+@{
+    ViewBag.Title = "Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/typographics.css">
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/dirPagination.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/app.js"></script>
+<script src="~/Scripts/AngularApp/Controller/RolesController.js"></script>
+<script src="~/Scripts/AngularApp/Validation/FilerForReturn_Yes_No_BasedOn_True_False.js"></script>
+<link rel="stylesheet" href="~/css/Custom.css">
+
+<div ng-app="myApp">
+    <div ng-controller="RoleController">
+        <h1 class="grid_12">Roles </h1>
+
+        @{
+            Html.RenderPartial("_CommonControllerForForm");
+        }
+
+        <div ng-show="showdiv">
+            <form id="frm1" name="frm" novalidate class="grid_12 no-box">
+                @*<form id="frm1" class="grid_12 no-box">*@
+                <fieldset>
+                    <legend>Role List</legend>
+                    <div class="content">
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Role Code </strong>
+                            </label>
+                            <div style="margin-left: 196px;">
+                                <input id="CustomerCode" ng-model="Role.role_code" type="text" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Role Name </strong>
+                            </label>
+                            <div style="margin-left: 196px;">
+                                <input id="CustomerName" ng-model="Role.role_name" type="text" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Is Admin </strong>
+                            </label>
+                            @*<div style="margin-left: 196px;" ng-controller="isAdminCtrl">*@
+                            <div style="margin-left: 196px;">
+                                <div id="f2_select2_chzn" class="chzn-container chzn-container-single chzn-container-single-nosearch" style="width: 100%;">
+                                    @*<select class="chzn-single" name="mySelect" id="mySelect" ng-options="c.is_admin for c in Roles track by c.is_admin" ng-model="Role">*@
+                                   @* <select class="chzn-single" name="mySelect" id="mySelect" ng-model="Role.is_admin">
+                                          <option ng-if="Role.is_admin==false" value="{{Role.is_admin}}">No</option>
+                                        <option ng-if="Role.is_admin==true" value="{{Role.is_admin}}">Yes</option>
+                                    </select>*@
+                                     @*<select class="chzn-single" name="mySelect" id="mySelect"
+                                          ng-options="option.name for option in RoleYesNoData.availableOptions track by option.is_admin"
+                                          ng-model="Role.is_admin">
+                                       
+                                     </select>
+                                    <span>{{Role.is_admin}}</span>*@
+                                    @*<select id="RoleIsAdim" class="chzn-single" ng-model="Role.is_admin">
+                                        <option selected="selected">Select</option>
+                                        <option value="true">No</option>
+                                        <option value="false">Yes</option>
+                                    </select>*@
+
+
+                                      <select class="chzn-single" name="mySelect2" id="mySelect2" ng-options="c.name for c in RoleIsAdmin track by c.is_admin" ng-model="RoleIsAdminobj">
+                                        <option value="">--- Select Role ---</option>
+                                    </select>
+                                   @* <select class="chzn-single" ng-model="RoleIsAdminobj">
+                                        <option  ng-repeat="sel in RoleIsAdmin" ng-selected="Role.is_admin == sel.is_admin"  value="{{sel.is_admin}}">{{sel.name}}</option>
+                                    </select>*@
+                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Is System </strong>
+                            </label>
+                            @*<div style="margin-left: 196px;" ng-controller="isSystemCtrl">*@
+                            <div style="margin-left: 196px;">
+                                <div id="f2_select2_chzn" class="chzn-container chzn-container-single chzn-container-single-nosearch" style="width: 100%;">
+                                   @* <select class="chzn-single" name="mySelect" id="mySelect" ng-model="Role.is_system">
+                                     <option value="{{Role.is_system}}">No</option>
+                                        <option value="{{Role.is_system}}">Yes</option>
+                                    </select>*@
+                                     <select class="chzn-single" name="mySelect" id="mySelect" ng-options="c.name for c in RoleIsSystem track by c.is_system" ng-model="RoleIsSystemobj">
+                                        <option value="">--- Select Role ---</option>
+                                    </select>
+                                  @*  <select class="chzn-single" ng-model="RoleIsSystemobj">
+                                        <option  ng-repeat="sel in RoleIsSystem" ng-selected="Role.is_system == sel.is_system"  value="{{sel.is_system}}">{{sel.name}}</option>
+                                    </select>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        @*<div class="left">
+                            <input id="Submit2" type="button" value="load" ng-click="get()" />
+                        </div>*@
+                        <div class="right">
+                            @*ng-disabled="!frm.$valid"*@
+                            @*ng-show="DisplayUpdate"*@
+                            <input id="btnRoleInsert" type="button" value="Add" ng-disabled="!frm.$valid" ng-show="DisplayUpdate" ng-click="InsertRole()" />
+                            <input id="btnRoleUpdate" ng-show="DisplayUpdatebtn" type="button" value="Update" ng-click="btnRoleUpdate()" />
+                        </div>
+                    </div>
+                    <!-- End of .actions -->
+                </fieldset>
+            </form>
+        </div>
+
+        <div ng-show="GriedRole">
+            <div class="grid_12 ">
+                <div class="box with-table">
+                    <div class="header">
+                        <h2>Roles</h2>
+                    </div>
+                    <div class="content">
+                        <div class="dataTables_wrapper">
+                            <div class="filters" style="display: block;">
+                                <div>
+                                    <label>
+                                        <span class="text">Search:</span>
+                                        <input type="text" ng-model="search" class="form-control" placeholder="Search"></label>
+                                </div>
+                            </div>
+
+                            <table class="dynamic styled dataTable">
+                                <!-- OPTIONAL: class=with-prev-next -->
+                                <thead>
+                                    <tr>
+                                        @*<th ng-click="sort('role_code')">Role Code
+                                        <span class="glyphicon sort-icon" ng-show="sortKey=='role_code'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                        </th>
+                                        <th ng-click="sort('role_name')">Role Name
+                                            <span class="glyphicon sort-icon" ng-show="sortKey=='role_name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                        </th>
+                                        <th ng-click="sort('is_admin')">Is Admin
+                                            <span class="glyphicon sort-icon" ng-show="sortKey=='is_admin'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                        </th>
+                                        <th ng-click="sort('is_system')">Is System
+                                            <span class="glyphicon sort-icon" ng-show="sortKey=='is_system'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                        </th>
+                                        <th>Action</th>*@
+                                        <tr>
+                                            <th ng-click="GetShort('role_code')">Role Code
+                                                <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('role_code')"></div>
+                                            </th>
+                                            <th ng-click="GetShort('role_name')">Role Name
+                                                <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('role_name')"></div>
+                                            </th>
+                                            <th ng-click="GetShort('is_admin')">Is Admin
+                                                <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('is_admin')"></div>
+                                            </th>
+                                            <th ng-click="GetShort('is_system')">Is System
+                                                <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('is_system')"></div>
+                                            </th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr dir-paginate="Role in Roles|orderBy:sortKey:reverse|filter:search|itemsPerPage:10">
+                                        <td>{{Role.role_code}}</td>
+                                        <td>{{Role.role_name}}</td>
+                                        <td ng-if="Role.is_admin==true">Yes</td>
+                                        <td ng-if="Role.is_admin==false">No</td>
+                                        <td ng-if="Role.is_system==true">Yes</td>
+                                        <td ng-if="Role.is_system==false">No</td>
+                                        <td>
+                                            <input id="btnEdit" type="button" value="Edit " ng-click="editRow(Role)" /></td>
+
+                                        @*<td>{{Role.role_code}}</td>
+                                        <td>{{Role.role_name}}</td>
+                                        <td >{{Role.is_admin}}</td>
+                                        <td>{{Role.is_system}}</td>
+                                        <td><input id="btnEdit" type="button" value="Edit " ng-click="editRow(Role)" /></td>*@
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <div class="footer">
+                                @*<div class="dataTables_info" id="DataTables_Table_0_info">Showing 1 to 5 of 11 entries</div>
+                                <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_0_paginate"><a class="first paginate_button paginate_button_disabled" tabindex="0" id="DataTables_Table_0_first">First</a><a class="previous paginate_button paginate_button_disabled" tabindex="0" id="DataTables_Table_0_previous">Previous</a><span><a class="paginate_active" tabindex="0">1</a><a class="paginate_button" tabindex="0">2</a><a class="paginate_button" tabindex="0">3</a></span><a class="next paginate_button" tabindex="0" id="DataTables_Table_0_next">Next</a><a class="last paginate_button" tabindex="0" id="DataTables_Table_0_last">Last</a>*@
+                                <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" class="ng-isolate-scope"></dir-pagination-controls>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="grid_12 gridStyle" ng-grid="gridOptions"></div>*@
+    </div>
+</div>

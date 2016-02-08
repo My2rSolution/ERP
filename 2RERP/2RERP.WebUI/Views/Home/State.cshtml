@@ -1,0 +1,135 @@
+﻿@model _2RERP.Domain.Common.States
+
+@{
+    ViewBag.Title = "State";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/typographics.css">
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/dirPagination.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/app.js"></script>
+<script src="~/Scripts/AngularApp/Controller/StatesController.js"></script>
+<link rel="stylesheet" href="~/css/Custom.css">
+
+<div ng-app="myApp">
+    <div ng-controller="StateController">
+        <h1 class="grid_12">All States </h1>
+        @{
+            Html.RenderPartial("_CommonControllerForForm");
+        }
+
+        <div ng-show="showdiv">
+            <form id="frm1" name="frm" novalidate class="grid_12 no-box">
+                @*<form id="frm1" class="grid_12 no-box">*@
+                <fieldset>
+                    <legend>Group</legend>
+                    <div class="content">
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Country </strong>
+                            </label>
+                            <div style="margin-left: 196px;" class="">
+                                <div id="f2_select2_chzn" class="chzn-container chzn-container-single chzn-container-single-nosearch" style="width: 100%;">
+                                   
+                                 @*   <select class="chzn-single" name="mySelect" id="mySelect" ng-options="c.country_name for c in Countries track by c.country_id" ng-model="State">
+                                        <option value="">Select Country</option>
+                                    </select>value.id as value.label group by value.group for value in myOptions
+                                    <span>{{State.country_name}}</span>*@
+                                       <select class="chzn-single" name="mySelect" id="mySelect" ng-options="c.country_name for c in Countries track by c.country_id" ng-model="Country">
+                                        <option value="">--- Select Country ---</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>State Code </strong>
+                            </label>
+                            <div style="margin-left: 196px;">
+                                <input id="CustomerCode" ng-model="State.state_code" type="text" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>State Name </strong>
+                            </label>
+                            <div style="margin-left: 196px;">
+                                <input id="CustomerName" ng-model="State.state_name" type="text" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="actions">
+                        <div class="right">
+
+                            <input id="btnStateInsert" type="button" value="Add" ng-disabled="!frm.$valid" ng-show="DisplayUpdate" ng-click="InsertState()" />
+                            <input id="btnStateUpdate" type="button" value="Update" ng-show="DisplayUpdatebtn" ng-click="btnStateUpdate()" />
+                        </div>
+                    </div>
+                    <!-- End of .actions -->
+                </fieldset>
+            </form>
+        </div>
+      
+
+        <div ng-show="GriedState">
+            <div class="grid_12 ">
+                <div class="box with-table">
+                    <div class="header">
+                        <h2>State List</h2>
+                    </div>
+                    <div class="content">
+                        <div class="dataTables_wrapper">
+                            <div class="filters" style="display: block;">
+                                <div>
+                                    <label>
+                                        <span class="text">Search:</span>
+                                        <input type="text" ng-model="search" class="form-control" placeholder="Search"></label>
+                                </div>
+                            </div>
+
+                            <table class="dynamic styled dataTable">
+                                <!-- OPTIONAL: class=with-prev-next -->
+                                <thead>
+                                <tr>
+                                    <th ng-click="GetShort('country_name')">Country Name
+                                        <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('country_name')"></div>
+                                    </th>
+                                    <th ng-click="GetShort('state_code')">State Code
+                                        <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('state_code')"></div>
+                                    </th>
+                                    <th ng-click="GetShort('state_name')">State Name
+                                        <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('state_name')"></div>
+                                    </th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr dir-paginate="State in States|orderBy:initialmodel:reverse|filter:search|itemsPerPage:10">
+                                    <td>{{State.country_name}}</td>
+                                    <td>{{State.state_code}}</td>
+                                    <td>{{State.state_name}}</td>
+                                    <td>
+                                        <input id="btnEdit" type="button" value="Edit " ng-click="editRow(State)"/></td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+                            @*<div>
+                                <li>Hello</li>
+                                <li ng-repeat="State in Countries">{{State.country_name}}</li>
+                            </div>*@
+                            <div class="footer">                              
+                                <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" class="ng-isolate-scope"></dir-pagination-controls>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

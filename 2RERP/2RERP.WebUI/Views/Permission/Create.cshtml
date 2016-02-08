@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+
+<link href="~/css/nestedCombobox.css" rel="stylesheet" />
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/dirPagination.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/app.js"></script>
+<script src="~/Scripts/AngularApp/Controller/MenuController.js"></script>
+@*<script src="~/Scripts/AngularApp/Controller/ng-nested-combobox.js"></script>*@
+@*<a href="~/template/select-group.html">~/template/select-group.html</a>*@
+@*<script src="~/Scripts/AngularApp/Controller/StatesController.js"></script>*@
+<link rel="stylesheet" href="~/css/Custom.css">
+
+<div ng-app="myApp">
+    <div ng-controller="MenuController as demo">
+        <h1 class="grid_12">All Menu </h1>
+       @* @{
+            Html.RenderPartial("_CommonControllerForForm");
+        }*@
+
+        <div >
+            <form id="frm1" name="frm" novalidate class="grid_12 no-box">
+                <fieldset>
+                    <legend>Menu</legend>
+                    <div class="content">
+                            <div class="row">
+                                <label for="f1_normal_input">
+                                    <strong>menu text </strong>
+                                </label>
+                                <div style="margin-left: 196px;">
+                                    <input id="menutext" ng-model="Menu.menu_text" type="text"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="f1_normal_input">
+                                    <strong>Menu Url </strong>
+                                </label>
+                                <div style="margin-left: 196px;">
+                                    <input id="url" ng-model="Menu.url" type="text"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>menu Code </strong>
+                            </label>
+                            <div style="margin-left: 196px;">
+                                <input id="menucode" ng-model="Menu.menu_code" type="text" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Select menu Items </strong>
+                            </label>
+                             <div id="f2_select2_chzn" style="margin-left: 196px;" class="">
+                           @* <div id="f2_select2_chzn" class="chzn-container chzn-container-single chzn-container-single-nosearch row" style="width: 100%;">*@
+                                <nested-combo-box control-class="col-md-7" control-disabled="false" change-event="demo.changeItem" collection="demo.Menus" current-member="demo.activeItem"/>
+                                @*<nested-Combo-Box control-class="col-md-7" change-event="MenuController.changeItem"  collection="collection" current-member="activeItem"/>*@
+                                @* <select class="chzn-single" name="mySelect" id="mySelect" ng-options="m.text for m in roleList1 track by m.textId" ng-model="roleList1">
+                                    <option value="">--- Select Menu ---</option>
+                                    <option ng-options="c.text for c in m.children track by c.textId"></option>
+                                </select>*@
+                            </div>
+                        </div>
+                        <div class="col code">
+                           <p>Selected item:</p>
+                            <pre>{{demo.selectedItem | json}}</pre>
+            </div>
+
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>sort </strong>
+                            </label>
+                            <div style="margin-left: 196px;">
+                                <input id="sort" ng-model="Menu.sort" type="text" />
+                            </div>
+                        </div>
+
+                       
+
+                    </div>
+                    <div class="actions">
+                        <div class="right">
+                            @*  <input id="btnStateInsert" type="button" value="Add" ng-disabled="!frm.$valid" ng-show="DisplayUpdate" ng-click="InsertState()" />
+                            <input id="btnStateUpdate" type="button" value="Update" ng-show="DisplayUpdatebtn" ng-click="btnStateUpdate()" />*@
+                              <input id="btnStateInsert" type="button" value="Add" ng-click="InsertMenu()" />
+                            <input id="btnStateUpdate" type="button" value="Update" />
+                        </div>
+                    </div>
+                    <!-- End of .actions -->
+                </fieldset>
+            </form>
+        </div>
+      
+
+        @*<div ng-show="GriedState">
+            <div class="grid_12 ">
+                <div class="box with-table">
+                    <div class="header">
+                        <h2>State List</h2>
+                    </div>
+                    <div class="content">
+                        <div class="dataTables_wrapper">
+                            <div class="filters" style="display: block;">
+                                <div>
+                                    <label>
+                                        <span class="text">Search:</span>
+                                        <input type="text" ng-model="search" class="form-control" placeholder="Search"></label>
+                                </div>
+                            </div>
+
+                            <table class="dynamic styled dataTable">
+                                <!-- OPTIONAL: class=with-prev-next -->
+                                <thead>
+                                <tr>
+                                    <th ng-click="GetShort('country_name')">Country Name
+                                        <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('country_name')"></div>
+                                    </th>
+                                    <th ng-click="GetShort('state_code')">State Code
+                                        <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('state_code')"></div>
+                                    </th>
+                                    <th ng-click="GetShort('state_name')">State Name
+                                        <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('state_name')"></div>
+                                    </th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr dir-paginate="State in States|orderBy:initialmodel:reverse|filter:search|itemsPerPage:10">
+                                    <td>{{State.country_name}}</td>
+                                    <td>{{State.state_code}}</td>
+                                    <td>{{State.state_name}}</td>
+                                    <td>
+                                        <input id="btnEdit" type="button" value="Edit " ng-click="editRow(State)"/></td>
+                                </tr>
+                                
+
+                            </table>
+                          
+                            <div class="footer">                              
+                                <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" class="ng-isolate-scope"></dir-pagination-controls>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    </div>
+</div>

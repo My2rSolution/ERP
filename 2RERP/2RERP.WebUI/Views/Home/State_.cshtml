@@ -1,0 +1,99 @@
+﻿@model _2RERP.Domain.Common.States
+
+@{
+    ViewBag.Title = "State";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<link rel="stylesheet" href="~/css/typographics.css">*@
+
+<link href="~/css/ng-grid.css" rel="stylesheet" />
+<link href="~/css/ng-grid.min.css" rel="stylesheet" />
+<script src="~/Scripts/angular.js"></script>
+
+<script src="~/Scripts/AngularApp/CommonModule/dirPagination.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/app.js"></script>
+<script src="~/Scripts/AngularApp/Controller/StatesController.js"></script>
+<script src="~/Scripts/ng-grid.js"></script>
+
+<script src="~/Scripts/ng-grid.debug.js"></script>
+<div ng-app="myApp">
+    <div ng-controller="StateController">
+        <h1 class="grid_12">All States </h1>
+        <form id="frm1" class="grid_12 no-box">
+            <fieldset>
+                <legend>State List</legend>
+                <div class="content">                  
+
+                    <div class="row">
+                        <label for="f1_normal_input">
+                            <strong>Country </strong>
+                        </label>
+                        <div style="margin-left: 196px;" class="">
+                            <div id="f2_select2_chzn" class="chzn-container chzn-container-single chzn-container-single-nosearch" style="width: 100%;">                               
+                                  <select class="chzn-single" name="mySelect" id="mySelect"
+                                      ng-options="c.country_name for c in Countries track by c.country_id"
+                                      ng-model="State">
+                                        <option value="">Select Country</option>
+                                  </select>                             
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="f1_normal_input">
+                            <strong>State Code </strong>
+                        </label>
+                        <div style="margin-left: 196px;">
+                            <input id="CustomerCode" ng-model="State.state_code" type="text" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="f1_normal_input">
+                            <strong>State Name </strong>
+                        </label>
+                        <div style="margin-left: 196px;">
+                            <input id="CustomerName" ng-model="State.state_name" type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <div class="left">
+                        <input id="Submit2" type="button" value="load" ng-click="get()" />
+                    </div>
+                    <div class="right">
+                        <input id="Submit1" type="button" value="Add" ng-click="InsertState()" />
+                    </div>
+                </div>
+                <!-- End of .actions -->
+            </fieldset>
+        </form>
+        <div class="grid_12">
+            <div class="box">
+                <div class="header">
+                    <h2>State Lsit</h2>
+                </div>
+                <div class="content">
+                    <table id="tbl" class="dynamic styled" data-filter-bar="always" data-table-tools='{"display":false}'>
+                        <!-- OPTIONAL: class=with-prev-next -->
+                        <thead>
+                            <tr>
+                                <th class="center">State id</th>
+                                <th class="center">country id</th>
+                                <th class="center">state code</th>
+                                <th class="center">state name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="c in States">
+                                <td class="center">{{c.state_id}}</td>
+                                <td class="center">{{c.country_id}}</td>
+                                <td class="center">{{c.state_code}}</td>
+                                <td class="center">{{c.state_name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

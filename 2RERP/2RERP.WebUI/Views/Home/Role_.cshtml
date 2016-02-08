@@ -1,0 +1,99 @@
+﻿@model _2RERP.Domain.Common.Roles
+
+@{
+    ViewBag.Title = "Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/typographics.css">
+@Scripts.Render("~/bundles/js/mylibs/dynamictables")
+<script src="../js/mylibs/dynamic-tables/jquery.dataTables.js"></script>
+<script src="../js/mylibs/dynamic-tables/jquery.dataTables.tableTools.zeroClipboard.js"></script>
+<script src="../js/mylibs/dynamic-tables/jquery.dataTables.tableTools.js"></script>
+<link href="~/css/ng-grid.css" rel="stylesheet" />
+<link href="~/css/ng-grid.min.css" rel="stylesheet" />
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/app.js"></script>
+<script src="~/Scripts/AngularApp/Controller/RolesController.js"></script>
+<script src="../Scripts/ng-grid.js"></script>
+<script src="../Scripts/ng-grid.debug.js"></script>
+<script src="~/Scripts/AngularApp/Validation/FilerForReturn_Yes_No_BasedOn_True_False.js"></script>
+<div ng-app="myApp">
+    <div ng-controller="RoleController">
+        <h1 class="grid_12">Roles </h1>
+        <form id="frm1" class="grid_12 no-box">
+            <fieldset>
+                <legend>Role List</legend>
+                <div class="content">
+                    @*<div class="row">
+                        <label for="f1_normal_input">
+                            <strong>Role id </strong>
+                        </label>
+                        <div style="margin-left: 196px;">
+                            <input type="text" ng-model="Role.role_id" id="Stateid" />
+                        </div>
+                    </div>*@
+                    <div class="row">
+                        <label for="f1_normal_input">
+                            <strong>Role Code </strong>
+                        </label>
+                        <div style="margin-left: 196px;">
+                            <input id="CustomerCode" ng-model="Role.role_code" type="text"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="f1_normal_input">
+                            <strong>Role Name </strong>
+                        </label>
+                        <div style="margin-left: 196px;">
+                            <input id="CustomerName" ng-model="Role.role_name" type="text"/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="f1_normal_input">
+                            <strong>Is Admin </strong>
+                        </label>
+                        @*<div style="margin-left: 196px;" ng-controller="isAdminCtrl">*@
+                        <div style="margin-left: 196px;">
+                            <select id="RoleIsAdim" ng-model="Role.is_admin">
+                                <option selected="selected">Select</option>
+                                <option value="true">No</option>
+                                <option value="false">Yes</option>
+                                @*<option value="true">Yes</option>
+                            <option value="false">No</option>*@
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="f1_normal_input">
+                            <strong>Is System </strong>
+                        </label>
+                        @*<div style="margin-left: 196px;" ng-controller="isSystemCtrl">*@
+                        <div style="margin-left: 196px;">
+                            <select id="RoleIsSystem" ng-model="Role.is_system">
+                                <option selected="selected">Select</option>
+                                <option value="true">No</option>
+                                <option value="false">Yes</option>
+                                @*<option value="true">Yes</option>
+                                <option value="false">No</option>*@
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <div class="left">
+                        <input id="Submit2" type="button" value="load" ng-click="get()"/>
+                    </div>
+                    <div class="right">
+                        <input id="btnStateInsert" ng-disabled="!frm.$valid" ng-show="DisplayUpdate" type="button" value="Add" ng-click="InsertRole()"/>
+                        <input id="btnStateUpdate" ng-show="DisplayUpdatebtn" type="button" value="Update" ng-click="btnRoleUpdate()"/>
+                    </div>
+                </div>
+                <!-- End of .actions -->
+            </fieldset>
+        </form>
+        <div class="grid_12 gridStyle" ng-grid="gridOptions"></div>
+    </div>
+</div>

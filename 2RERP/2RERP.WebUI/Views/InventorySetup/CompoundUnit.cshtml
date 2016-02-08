@@ -1,0 +1,129 @@
+﻿@model _2RERP.Domain.Inventory.CompoundUnits
+
+@{
+    ViewBag.Title = "Compound Unit Measurement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/typographics.css">
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/dirPagination.js"></script>
+<script src="~/Scripts/AngularApp/CommonModule/app.js"></script>
+<script src="~/Scripts/AngularApp/InventoryControllers/CompoundUnitController.js"></script>
+<link rel="stylesheet" href="~/css/Custom.css">
+
+<div ng-app="myApp">
+    <div ng-controller="CompoundUnitController">
+        <h1 class="grid_12">Compound Units </h1>
+        @{
+            Html.RenderPartial("_CommonControllerForForm");
+        }
+
+        <div ng-show="showdiv">
+            <form id="frm1" name="frm" novalidate class="grid_12 no-box">
+                @*<form id="frm1" class="grid_12 no-box">*@
+                <fieldset>
+                    <legend>Group</legend>
+                    <div class="content">
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Base Unit </strong>
+                            </label>
+                            <div style="margin-left: 196px;" class="">
+                                <div id="f2_select1_chzn" class="chzn-container chzn-container-single chzn-container-single-nosearch" style="width: 100%;">
+                                    <select class="chzn-single" name="mySelect1" id="mySelect1" ng-options="c.unit_name for c in Units track by c.unit_id" ng-model="BaseUnit">
+                                        <option value="">---- Select Base Unit ---- </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Value </strong>
+                            </label>
+                            <div style="margin-left: 196px;">
+                                <input id="CustomerCode" ng-model="CompoundUnit.value" type="text" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label for="f1_normal_input">
+                                <strong>Compare Unit </strong>
+                            </label>
+                            <div style="margin-left: 196px;" class="">
+                                <div id="f2_select2_chzn" class="chzn-container chzn-container-single chzn-container-single-nosearch" style="width: 100%;">
+                                    <select class="chzn-single" name="mySelect2" id="mySelect2" ng-options="c.unit_name for c in Units track by c.unit_id" ng-model="CompareUnit">
+                                        <option value="">---- Select Compare Unit ---- </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="right">
+
+                            <input id="btnCompoundUnitInsert" type="button" value="Add" ng-disabled="!frm.$valid" ng-show="DisplayUpdate" ng-click="InsertCompoundUnit()" />
+                            <input id="btnCompoundUnitUpdate" type="button" value="Update" ng-show="DisplayUpdatebtn" ng-click="btnCompoundUnitUpdate()" />
+                        </div>
+                    </div>
+                    <!-- End of .actions -->
+                </fieldset>
+            </form>
+        </div>
+
+
+        <div ng-show="GriedCompoundUnit">
+            <div class="grid_12 ">
+                <div class="box with-table">
+                    <div class="header">
+                        <h2>CompoundUnit List</h2>
+                    </div>
+                    <div class="content">
+                        <div class="dataTables_wrapper">
+                            <div class="filters" style="display: block;">
+                                <div>
+                                    <label>
+                                        <span class="text">Search:</span>
+                                        <input type="text" ng-model="search" class="form-control" placeholder="Search"></label>
+                                </div>
+                            </div>
+
+                            <table class="dynamic styled dataTable">
+                                <!-- OPTIONAL: class=with-prev-next -->
+                                <thead>
+                                    <tr>
+                                        <th ng-click="GetShort('base_unit_name')">Base Unit Name
+                                            <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('base_unit_name')"></div>
+                                        </th>
+                                        <th ng-click="GetShort('value')">Value
+                                            <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('value')"></div>
+                                        </th>
+                                        <th ng-click="GetShort('compare_unit_name')">Compare Unit Name
+                                            <div style="display: inline-block; margin-left: 10px;" ng-class="GetSortClass('compare_unit_name')"></div>
+                                        </th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr dir-paginate="CompoundUnit in CompoundUnits|orderBy:initialmodel:reverse|filter:search|itemsPerPage:10">
+                                        <td>{{CompoundUnit.base_unit_name}}</td>
+                                        <td>{{CompoundUnit.value}}</td>
+                                        <td>{{CompoundUnit.compare_unit_name}}</td>
+                                        <td>
+                                            <input id="btnEdit" type="button" value="Edit " ng-click="editRow(CompoundUnit)" /></td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <div class="footer">
+                                <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" class="ng-isolate-scope"></dir-pagination-controls>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
